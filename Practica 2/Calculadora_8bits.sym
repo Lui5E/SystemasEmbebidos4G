@@ -38,17 +38,17 @@ FF6-FF8 @READ_PROGRAM_MEMORY.P2
 ROM Allocation:
 000004  @MUL1616
 000024  @delay_ms1
-00004A  error
-000094  @DIV1616
-0000D8  main
-0000D8  @cinit1
-0000F2  @cinit2
+00004C  error
+000096  @DIV1616
+0000DA  main
+0000DA  @cinit1
+0000F4  @cinit2
 
 Project Directory:
     D:\SystemasEmbebidos4G\Practica 2\
 
 Project Files:
-    Calculadora_8bits.c                                     [27-mar-17 20:31  CRC=82A4B605]
+    Calculadora_8bits.c                                     [27-mar-17 22:41  CRC=82A4B605]
     C:\Program Files (x86)\PICC\Devices\18F4620.h           [10-sep-13 16:34  CRC=044A57BA]
 
 Source signature=8B396579
