@@ -1,0 +1,16 @@
+[PROJECT]
+Target=Calculadora_8bits.hex
+Processor_Text=PIC18F4620
+CCSVersion=5.012
+Compiler=PCH
+[Target Data]
+FileList=Calculadora_8bits.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Calculadora_8bits.c]
+Type=4
+[mru-list]
+1=Calculadora_8bits.c
+[Units]
+Count=1
+1=Calculadora_8bits (main)
