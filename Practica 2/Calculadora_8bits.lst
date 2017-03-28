@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 18:58
+CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 
                Filename:   D:\SystemasEmbebidos4G\Practica 2\Calculadora_8bits.lst
 
-               ROM used:   430 bytes (1%)
-                           Largest free fragment is 65106
-               RAM used:   6 (0%) at main() level
-                           12 (0%) worst case
+               ROM used:   566 bytes (1%)
+                           Largest free fragment is 64970
+               RAM used:   8 (0%) at main() level
+                           16 (0%) worst case
                Stack used: 2 locations
                Stack size: 31
 
 *
-00000:  GOTO   009E
+00000:  GOTO   00D8
 .................... #include <18F4620.h> 
 .................... ///////////// Standard Header file for the PIC18F4620 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
@@ -23,26 +23,53 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 18:58
 .................... //// form are not restricted in any way.                               //// 
 .................... /////////////////////////////////////////////////////////////////////////// 
 .................... #device PIC18F4620 
+00004:  MOVF   0C,W
+00006:  MULWF  0E
+00008:  MOVFF  FF3,01
+0000C:  MOVFF  FF4,00
+00010:  MULWF  0F
+00012:  MOVF   FF3,W
+00014:  ADDWF  00,F
+00016:  MOVF   0D,W
+00018:  MULWF  0E
+0001A:  MOVF   FF3,W
+0001C:  ADDWFC 00,W
+0001E:  MOVWF  02
+00020:  GOTO   01A8 (RETURN)
 *
-00074:  MOVF   0B,W
-00076:  CLRF   01
-00078:  SUBWF  0A,W
-0007A:  BC    0082
-0007C:  MOVFF  0A,00
-00080:  BRA    009A
-00082:  CLRF   00
-00084:  MOVLW  08
-00086:  MOVWF  0C
-00088:  RLCF   0A,F
-0008A:  RLCF   00,F
-0008C:  MOVF   0B,W
-0008E:  SUBWF  00,W
-00090:  BTFSC  FD8.0
-00092:  MOVWF  00
-00094:  RLCF   01,F
-00096:  DECFSZ 0C,F
-00098:  BRA    0088
-0009A:  GOTO   0160 (RETURN)
+00094:  CLRF   01
+00096:  CLRF   02
+00098:  CLRF   00
+0009A:  CLRF   03
+0009C:  MOVF   0F,W
+0009E:  BNZ   00A4
+000A0:  MOVF   0E,W
+000A2:  BZ    00D4
+000A4:  MOVLW  10
+000A6:  MOVWF  10
+000A8:  BCF    FD8.0
+000AA:  RLCF   0C,F
+000AC:  RLCF   0D,F
+000AE:  RLCF   00,F
+000B0:  RLCF   03,F
+000B2:  MOVF   0F,W
+000B4:  SUBWF  03,W
+000B6:  BNZ   00BC
+000B8:  MOVF   0E,W
+000BA:  SUBWF  00,W
+000BC:  BNC   00CC
+000BE:  MOVF   0E,W
+000C0:  SUBWF  00,F
+000C2:  BTFSS  FD8.0
+000C4:  DECF   03,F
+000C6:  MOVF   0F,W
+000C8:  SUBWF  03,F
+000CA:  BSF    FD8.0
+000CC:  RLCF   01,F
+000CE:  RLCF   02,F
+000D0:  DECFSZ 10,F
+000D2:  BRA    00A8
+000D4:  GOTO   01E6 (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -50,232 +77,262 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 18:58
 .................... #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG 
 .................... #use delay(clock=32000000) 
 *
-00004:  CLRF   FEA
-00006:  MOVLW  0B
-00008:  MOVWF  FE9
-0000A:  MOVF   FEF,W
-0000C:  BZ    0028
-0000E:  MOVLW  0A
-00010:  MOVWF  01
-00012:  CLRF   00
-00014:  DECFSZ 00,F
-00016:  BRA    0014
-00018:  DECFSZ 01,F
-0001A:  BRA    0012
-0001C:  MOVLW  5F
-0001E:  MOVWF  00
-00020:  DECFSZ 00,F
-00022:  BRA    0020
-00024:  DECFSZ FEF,F
-00026:  BRA    000E
-00028:  RETURN 0
+00024:  CLRF   FEA
+00026:  MOVLW  09
+00028:  MOVWF  FE9
+0002A:  MOVF   FEF,W
+0002C:  BZ    0048
+0002E:  MOVLW  0A
+00030:  MOVWF  01
+00032:  CLRF   00
+00034:  DECFSZ 00,F
+00036:  BRA    0034
+00038:  DECFSZ 01,F
+0003A:  BRA    0032
+0003C:  MOVLW  5F
+0003E:  MOVWF  00
+00040:  DECFSZ 00,F
+00042:  BRA    0040
+00044:  DECFSZ FEF,F
+00046:  BRA    002E
+00048:  RETURN 0
 .................... #define retardo 500 
 ....................  
 .................... void error(); 
 ....................  
 .................... void main (void){ 
 *
-0009E:  CLRF   FF8
-000A0:  BCF    FD0.7
-000A2:  MOVLW  70
-000A4:  MOVWF  FD3
-000A6:  MOVLW  40
-000A8:  MOVWF  F9B
-000AA:  MOVF   FD3,W
-000AC:  MOVF   FC1,W
-000AE:  ANDLW  C0
-000B0:  IORLW  0F
-000B2:  MOVWF  FC1
-000B4:  MOVLW  07
-000B6:  MOVWF  FB4
-....................    set_tris_a(0b00000000); 
-000B8:  MOVLW  00
-000BA:  MOVWF  F92
-....................    set_tris_b(0b11110000); 
-000BC:  MOVLW  F0
-000BE:  MOVWF  F93
+000D8:  CLRF   FF8
+000DA:  BCF    FD0.7
+000DC:  MOVLW  70
+000DE:  MOVWF  FD3
+000E0:  MOVLW  40
+000E2:  MOVWF  F9B
+000E4:  MOVF   FD3,W
+000E6:  MOVF   FC1,W
+000E8:  ANDLW  C0
+000EA:  IORLW  0F
+000EC:  MOVWF  FC1
+000EE:  MOVLW  07
+000F0:  MOVWF  FB4
+....................    set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7 
+000F2:  MOVLW  00
+000F4:  MOVWF  F92
+....................    set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7 
+000F6:  MOVLW  F0
+000F8:  MOVWF  F93
 ....................    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales 
-000C0:  MOVF   FC1,W
-000C2:  ANDLW  C0
-000C4:  IORLW  0F
-000C6:  MOVWF  FC1
+000FA:  MOVF   FC1,W
+000FC:  ANDLW  C0
+000FE:  IORLW  0F
+00100:  MOVWF  FC1
 ....................    setup_oscillator(OSC_32MHZ); 
-000C8:  MOVLW  70
-000CA:  MOVWF  FD3
-000CC:  MOVLW  40
-000CE:  MOVWF  F9B
-000D0:  MOVF   FD3,W
+00102:  MOVLW  70
+00104:  MOVWF  FD3
+00106:  MOVLW  40
+00108:  MOVWF  F9B
+0010A:  MOVF   FD3,W
 ....................    int16 resultado=0; 
-....................    int8 operando1=0,operando2=0,operacion=0; //Variables operandos operacion 
-000D2:  CLRF   06
-000D4:  CLRF   05
-000D6:  CLRF   07
-000D8:  CLRF   08
-000DA:  CLRF   09
+....................    int8 operacion=0; //Variables operandos oper 
+0010C:  CLRF   06
+0010E:  CLRF   05
+00110:  CLRF   07
 ....................    while(True){ 
-....................    operando1=input_c(); 
-000DC:  SETF   F94
-000DE:  MOVFF  F82,07
-....................    operando2=input_d(); 
-000E2:  SETF   F95
-000E4:  MOVFF  F83,08
-....................    if(input(PIN_B4)==1) operacion=1; //suma 
-000E8:  BSF    F93.4
-000EA:  BTFSS  F81.4
-000EC:  BRA    00F4
-000EE:  MOVLW  01
-000F0:  MOVWF  09
-000F2:  BRA    0116
-....................    else if(input(PIN_B5)==1) operacion=2;//resta 
-000F4:  BSF    F93.5
-000F6:  BTFSS  F81.5
-000F8:  BRA    0100
-000FA:  MOVLW  02
-000FC:  MOVWF  09
-000FE:  BRA    0116
-....................    else if(input(PIN_B6)==1) operacion=3;//multiplicacion 
-00100:  BSF    F93.6
-00102:  BTFSS  F81.6
-00104:  BRA    010C
-00106:  MOVLW  03
-00108:  MOVWF  09
-0010A:  BRA    0116
-....................    else if(input(PIN_B7)==1) operacion=4;//divicion 
-0010C:  BSF    F93.7
-0010E:  BTFSS  F81.7
-00110:  BRA    0116
-00112:  MOVLW  04
-00114:  MOVWF  09
-....................    if(operacion==1) resultado = operando1 + operando2; 
-00116:  DECFSZ 09,W
-00118:  BRA    0124
-0011A:  MOVF   08,W
-0011C:  ADDWF  07,W
-0011E:  MOVWF  05
-00120:  CLRF   06
-00122:  BRA    0166
-....................    else if(operacion == 2) resultado = operando1 - operando2; 
-00124:  MOVF   09,W
-00126:  SUBLW  02
-00128:  BNZ   0134
-0012A:  MOVF   08,W
-0012C:  SUBWF  07,W
-0012E:  MOVWF  05
-00130:  CLRF   06
-00132:  BRA    0166
-....................    else if(operacion == 3) resultado = operando1 * operando2; 
-00134:  MOVF   09,W
-00136:  SUBLW  03
-00138:  BNZ   0146
-0013A:  MOVF   07,W
-0013C:  MULWF  08
-0013E:  MOVF   FF3,W
-00140:  CLRF   06
-00142:  MOVWF  05
-00144:  BRA    0166
+....................    if(input(PIN_B4)) operacion=1; //suma 
+00112:  BSF    F93.4
+00114:  BTFSS  F81.4
+00116:  BRA    011E
+00118:  MOVLW  01
+0011A:  MOVWF  07
+0011C:  BRA    0140
+....................    else if(input(PIN_B5)) operacion=2;//resta 
+0011E:  BSF    F93.5
+00120:  BTFSS  F81.5
+00122:  BRA    012A
+00124:  MOVLW  02
+00126:  MOVWF  07
+00128:  BRA    0140
+....................    else if(input(PIN_B6)) operacion=3;//multiplicacion 
+0012A:  BSF    F93.6
+0012C:  BTFSS  F81.6
+0012E:  BRA    0136
+00130:  MOVLW  03
+00132:  MOVWF  07
+00134:  BRA    0140
+....................    else if(input(PIN_B7)) operacion=4;//divicion 
+00136:  BSF    F93.7
+00138:  BTFSS  F81.7
+0013A:  BRA    0140
+0013C:  MOVLW  04
+0013E:  MOVWF  07
+....................    if(operacion==1) resultado = (long)input_c() + (long)input_d(); 
+00140:  DECFSZ 07,W
+00142:  BRA    015E
+00144:  SETF   F94
+00146:  MOVF   F82,W
+00148:  CLRF   09
+0014A:  MOVWF  08
+0014C:  SETF   F95
+0014E:  MOVF   F83,W
+00150:  CLRF   03
+00152:  ADDWF  08,W
+00154:  MOVWF  05
+00156:  MOVF   03,W
+00158:  ADDWFC 09,W
+0015A:  MOVWF  06
+0015C:  BRA    01EE
+....................    else if(operacion == 2) resultado = (long)input_c() - (long)input_d(); 
+0015E:  MOVF   07,W
+00160:  SUBLW  02
+00162:  BNZ   017E
+00164:  SETF   F94
+00166:  MOVF   F82,W
+00168:  CLRF   09
+0016A:  MOVWF  08
+0016C:  SETF   F95
+0016E:  MOVF   F83,W
+00170:  CLRF   03
+00172:  SUBWF  08,W
+00174:  MOVWF  05
+00176:  MOVF   03,W
+00178:  SUBWFB 09,W
+0017A:  MOVWF  06
+0017C:  BRA    01EE
+....................    else if(operacion == 3) resultado = (long)input_c() * (long)input_d(); 
+0017E:  MOVF   07,W
+00180:  SUBLW  03
+00182:  BNZ   01B2
+00184:  SETF   F94
+00186:  MOVF   F82,W
+00188:  CLRF   09
+0018A:  MOVWF  08
+0018C:  SETF   F95
+0018E:  MOVF   F83,W
+00190:  CLRF   03
+00192:  MOVWF  0A
+00194:  MOVFF  03,0B
+00198:  MOVFF  09,0D
+0019C:  MOVFF  08,0C
+001A0:  MOVFF  03,0F
+001A4:  MOVWF  0E
+001A6:  BRA    0004
+001A8:  MOVFF  02,06
+001AC:  MOVFF  01,05
+001B0:  BRA    01EE
 ....................    else if(operacion == 4) 
-00146:  MOVF   09,W
-00148:  SUBLW  04
-0014A:  BNZ   0166
+001B2:  MOVF   07,W
+001B4:  SUBLW  04
+001B6:  BNZ   01EE
 ....................    { 
 ....................    if(input_d()==0) error(); //funcion de error  
-0014C:  SETF   F95
-0014E:  MOVF   F83,F
-00150:  BNZ   0156
-00152:  BRA    002A
-00154:  BRA    0166
-....................    else resultado = operando1 / operando2; 
-00156:  MOVFF  07,0A
-0015A:  MOVFF  08,0B
-0015E:  BRA    0074
-00160:  CLRF   06
-00162:  MOVFF  01,05
+001B8:  SETF   F95
+001BA:  MOVF   F83,F
+001BC:  BNZ   01C2
+001BE:  BRA    004A
+001C0:  BRA    01EE
+....................    else resultado = (long)input_c() / (long)input_d(); 
+001C2:  SETF   F94
+001C4:  MOVF   F82,W
+001C6:  CLRF   09
+001C8:  MOVWF  08
+001CA:  SETF   F95
+001CC:  MOVF   F83,W
+001CE:  CLRF   03
+001D0:  MOVWF  0A
+001D2:  MOVFF  03,0B
+001D6:  MOVFF  09,0D
+001DA:  MOVFF  08,0C
+001DE:  MOVFF  03,0F
+001E2:  MOVWF  0E
+001E4:  BRA    0094
+001E6:  MOVFF  02,06
+001EA:  MOVFF  01,05
 ....................    } 
 ....................    output_a(resultado); 
-00166:  CLRF   F92
-00168:  MOVFF  05,F89
+001EE:  CLRF   F92
+001F0:  MOVFF  05,F89
 ....................    output_b(resultado>>6); 
-0016C:  RRCF   06,W
-0016E:  MOVWF  0B
-00170:  RRCF   05,W
-00172:  MOVWF  0A
-00174:  RRCF   0B,F
-00176:  RRCF   0A,F
-00178:  RRCF   0B,F
-0017A:  RRCF   0A,F
-0017C:  RRCF   0B,F
-0017E:  RRCF   0A,F
-00180:  RRCF   0B,F
-00182:  RRCF   0A,F
-00184:  RRCF   0B,F
-00186:  RRCF   0A,F
-00188:  MOVLW  03
-0018A:  ANDWF  0B,F
-0018C:  CLRF   F93
-0018E:  MOVFF  0A,F8A
+001F4:  RRCF   06,W
+001F6:  MOVWF  09
+001F8:  RRCF   05,W
+001FA:  MOVWF  08
+001FC:  RRCF   09,F
+001FE:  RRCF   08,F
+00200:  RRCF   09,F
+00202:  RRCF   08,F
+00204:  RRCF   09,F
+00206:  RRCF   08,F
+00208:  RRCF   09,F
+0020A:  RRCF   08,F
+0020C:  RRCF   09,F
+0020E:  RRCF   08,F
+00210:  MOVLW  03
+00212:  ANDWF  09,F
+00214:  CLRF   F93
+00216:  MOVFF  08,F8A
 ....................    output_e(resultado>>10); 
-00192:  CLRF   0B
-00194:  RRCF   06,W
-00196:  MOVWF  0A
-00198:  RRCF   0A,F
-0019A:  MOVLW  3F
-0019C:  ANDWF  0A,F
-0019E:  BCF    F96.0
-001A0:  BCF    F96.1
-001A2:  BCF    F96.2
-001A4:  BCF    F96.3
-001A6:  MOVFF  0A,F8D
-001AA:  BRA    00DC
+0021A:  CLRF   09
+0021C:  RRCF   06,W
+0021E:  MOVWF  08
+00220:  RRCF   08,F
+00222:  MOVLW  3F
+00224:  ANDWF  08,F
+00226:  BCF    F96.0
+00228:  BCF    F96.1
+0022A:  BCF    F96.2
+0022C:  BCF    F96.3
+0022E:  MOVFF  08,F8D
+00232:  BRA    0112
 ....................    }  
 .................... }    
 .................... void error() 
-001AC:  SLEEP 
+00234:  SLEEP 
 .................... { 
 ....................    output_a(0b00111111); 
 *
-0002A:  CLRF   F92
-0002C:  MOVLW  3F
-0002E:  MOVWF  F89
+0004A:  CLRF   F92
+0004C:  MOVLW  3F
+0004E:  MOVWF  F89
 ....................    output_b(0b00001111); 
-00030:  CLRF   F93
-00032:  MOVLW  0F
-00034:  MOVWF  F8A
+00050:  CLRF   F93
+00052:  MOVLW  0F
+00054:  MOVWF  F8A
 ....................    output_e(0b00001111); 
-00036:  BCF    F96.0
-00038:  BCF    F96.1
-0003A:  BCF    F96.2
-0003C:  BCF    F96.3
-0003E:  MOVWF  F8D
-....................    delay_ms(retardo); 
-00040:  MOVLW  02
-00042:  MOVWF  0A
-00044:  MOVLW  FA
-00046:  MOVWF  0B
-00048:  RCALL  0004
-0004A:  DECFSZ 0A,F
-0004C:  BRA    0044
-....................    output_a(0b00000000); 
-0004E:  CLRF   F92
-00050:  CLRF   F89
-....................    output_b(0b00000000); 
-00052:  CLRF   F93
-00054:  CLRF   F8A
-....................    output_e(0b00001000); 
 00056:  BCF    F96.0
 00058:  BCF    F96.1
 0005A:  BCF    F96.2
 0005C:  BCF    F96.3
-0005E:  MOVLW  08
-00060:  MOVWF  F8D
+0005E:  MOVWF  F8D
 ....................    delay_ms(retardo); 
-00062:  MOVLW  02
-00064:  MOVWF  0A
-00066:  MOVLW  FA
-00068:  MOVWF  0B
-0006A:  RCALL  0004
-0006C:  DECFSZ 0A,F
-0006E:  BRA    0066
-00070:  GOTO   0166 (RETURN)
+00060:  MOVLW  02
+00062:  MOVWF  08
+00064:  MOVLW  FA
+00066:  MOVWF  09
+00068:  RCALL  0024
+0006A:  DECFSZ 08,F
+0006C:  BRA    0064
+....................    output_a(0b00000000); 
+0006E:  CLRF   F92
+00070:  CLRF   F89
+....................    output_b(0b00000000); 
+00072:  CLRF   F93
+00074:  CLRF   F8A
+....................    output_e(0b00001000); 
+00076:  BCF    F96.0
+00078:  BCF    F96.1
+0007A:  BCF    F96.2
+0007C:  BCF    F96.3
+0007E:  MOVLW  08
+00080:  MOVWF  F8D
+....................    delay_ms(retardo); 
+00082:  MOVLW  02
+00084:  MOVWF  08
+00086:  MOVLW  FA
+00088:  MOVWF  09
+0008A:  RCALL  0024
+0008C:  DECFSZ 08,F
+0008E:  BRA    0086
+00090:  GOTO   01EE (RETURN)
 .................... } 
 
 Configuration Fuses:
