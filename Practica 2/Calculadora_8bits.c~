@@ -5,7 +5,7 @@
 #use standard_io(b)
 #use standard_io(a)
 #define retardo 500
-
+//prueba
 void error();
 
 void main (void){
