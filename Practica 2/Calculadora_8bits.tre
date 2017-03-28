@@ -1,8 +1,9 @@
 ÀÄCalculadora_8bits
-   ÀÄmain  0/350  Ram=4
+   ÀÄmain  0/356  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@MUL1616  0/32  Ram=5
       ÃÄerror  0/74  Ram=1
       ³  ÃÄ@delay_ms1  0/38  Ram=1
       ³  ÀÄ@delay_ms1  0/38  Ram=1
+      ÃÄ@delay_ms1  0/38  Ram=1
       ÀÄ@DIV1616  0/68  Ram=5

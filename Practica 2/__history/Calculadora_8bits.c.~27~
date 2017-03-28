@@ -23,7 +23,7 @@ void main (void){
    else if(operacion == 3) resultado = (long)input_c() * (long)input_d();
    else if(operacion == 4)
    {
-   if(input_d()==0) error() , delay_ms(2); //funcion de error 
+   if(input_d()==0) error(); //funcion de error 
    else resultado = (long)input_c() / (long)input_d();
    }
    output_a(resultado);

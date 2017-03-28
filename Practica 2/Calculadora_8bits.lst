@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
+CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 20:32
 
                Filename:   D:\SystemasEmbebidos4G\Practica 2\Calculadora_8bits.lst
 
-               ROM used:   566 bytes (1%)
-                           Largest free fragment is 64970
+               ROM used:   572 bytes (1%)
+                           Largest free fragment is 64964
                RAM used:   8 (0%) at main() level
                            16 (0%) worst case
                Stack used: 2 locations
@@ -69,7 +69,7 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 000CE:  RLCF   02,F
 000D0:  DECFSZ 10,F
 000D2:  BRA    00A8
-000D4:  GOTO   01E6 (RETURN)
+000D4:  GOTO   01EC (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -180,7 +180,7 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 00156:  MOVF   03,W
 00158:  ADDWFC 09,W
 0015A:  MOVWF  06
-0015C:  BRA    01EE
+0015C:  BRA    01F4
 ....................    else if(operacion == 2) resultado = (long)input_c() - (long)input_d(); 
 0015E:  MOVF   07,W
 00160:  SUBLW  02
@@ -197,7 +197,7 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 00176:  MOVF   03,W
 00178:  SUBWFB 09,W
 0017A:  MOVWF  06
-0017C:  BRA    01EE
+0017C:  BRA    01F4
 ....................    else if(operacion == 3) resultado = (long)input_c() * (long)input_d(); 
 0017E:  MOVF   07,W
 00180:  SUBLW  03
@@ -218,75 +218,78 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 001A6:  BRA    0004
 001A8:  MOVFF  02,06
 001AC:  MOVFF  01,05
-001B0:  BRA    01EE
+001B0:  BRA    01F4
 ....................    else if(operacion == 4) 
 001B2:  MOVF   07,W
 001B4:  SUBLW  04
-001B6:  BNZ   01EE
+001B6:  BNZ   01F4
 ....................    { 
-....................    if(input_d()==0) error(); //funcion de error  
+....................    if(input_d()==0) error() , delay_ms(2); //funcion de error  
 001B8:  SETF   F95
 001BA:  MOVF   F83,F
-001BC:  BNZ   01C2
+001BC:  BNZ   01C8
 001BE:  BRA    004A
-001C0:  BRA    01EE
+001C0:  MOVLW  02
+001C2:  MOVWF  09
+001C4:  RCALL  0024
+001C6:  BRA    01F4
 ....................    else resultado = (long)input_c() / (long)input_d(); 
-001C2:  SETF   F94
-001C4:  MOVF   F82,W
-001C6:  CLRF   09
-001C8:  MOVWF  08
-001CA:  SETF   F95
-001CC:  MOVF   F83,W
-001CE:  CLRF   03
-001D0:  MOVWF  0A
-001D2:  MOVFF  03,0B
-001D6:  MOVFF  09,0D
-001DA:  MOVFF  08,0C
-001DE:  MOVFF  03,0F
-001E2:  MOVWF  0E
-001E4:  BRA    0094
-001E6:  MOVFF  02,06
-001EA:  MOVFF  01,05
+001C8:  SETF   F94
+001CA:  MOVF   F82,W
+001CC:  CLRF   09
+001CE:  MOVWF  08
+001D0:  SETF   F95
+001D2:  MOVF   F83,W
+001D4:  CLRF   03
+001D6:  MOVWF  0A
+001D8:  MOVFF  03,0B
+001DC:  MOVFF  09,0D
+001E0:  MOVFF  08,0C
+001E4:  MOVFF  03,0F
+001E8:  MOVWF  0E
+001EA:  BRA    0094
+001EC:  MOVFF  02,06
+001F0:  MOVFF  01,05
 ....................    } 
 ....................    output_a(resultado); 
-001EE:  CLRF   F92
-001F0:  MOVFF  05,F89
+001F4:  CLRF   F92
+001F6:  MOVFF  05,F89
 ....................    output_b(resultado>>6); 
-001F4:  RRCF   06,W
-001F6:  MOVWF  09
-001F8:  RRCF   05,W
-001FA:  MOVWF  08
-001FC:  RRCF   09,F
-001FE:  RRCF   08,F
-00200:  RRCF   09,F
-00202:  RRCF   08,F
-00204:  RRCF   09,F
-00206:  RRCF   08,F
-00208:  RRCF   09,F
-0020A:  RRCF   08,F
-0020C:  RRCF   09,F
-0020E:  RRCF   08,F
-00210:  MOVLW  03
-00212:  ANDWF  09,F
-00214:  CLRF   F93
-00216:  MOVFF  08,F8A
+001FA:  RRCF   06,W
+001FC:  MOVWF  09
+001FE:  RRCF   05,W
+00200:  MOVWF  08
+00202:  RRCF   09,F
+00204:  RRCF   08,F
+00206:  RRCF   09,F
+00208:  RRCF   08,F
+0020A:  RRCF   09,F
+0020C:  RRCF   08,F
+0020E:  RRCF   09,F
+00210:  RRCF   08,F
+00212:  RRCF   09,F
+00214:  RRCF   08,F
+00216:  MOVLW  03
+00218:  ANDWF  09,F
+0021A:  CLRF   F93
+0021C:  MOVFF  08,F8A
 ....................    output_e(resultado>>10); 
-0021A:  CLRF   09
-0021C:  RRCF   06,W
-0021E:  MOVWF  08
-00220:  RRCF   08,F
-00222:  MOVLW  3F
-00224:  ANDWF  08,F
-00226:  BCF    F96.0
-00228:  BCF    F96.1
-0022A:  BCF    F96.2
-0022C:  BCF    F96.3
-0022E:  MOVFF  08,F8D
-00232:  BRA    0112
+00220:  CLRF   09
+00222:  RRCF   06,W
+00224:  MOVWF  08
+00226:  RRCF   08,F
+00228:  MOVLW  3F
+0022A:  ANDWF  08,F
+0022C:  BCF    F96.0
+0022E:  BCF    F96.1
+00230:  BCF    F96.2
+00232:  BCF    F96.3
+00234:  MOVFF  08,F8D
+00238:  BRA    0112
 ....................    }  
 .................... }    
 .................... void error() 
-00234:  SLEEP 
+0023A:  SLEEP 
 .................... { 
 ....................    output_a(0b00111111); 
 *
@@ -332,7 +335,7 @@ CCS PCH C Compiler, Version 5.012, 41559               27-mar-17 19:50
 0008A:  RCALL  0024
 0008C:  DECFSZ 08,F
 0008E:  BRA    0086
-00090:  GOTO   01EE (RETURN)
+00090:  GOTO   01C0 (RETURN)
 .................... } 
 
 Configuration Fuses:
