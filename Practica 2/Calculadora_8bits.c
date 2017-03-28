@@ -1,7 +1,7 @@
 #include <18F4620.h>
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
-#use delay(clock=32000000)
+#use delay(clock=16000000)
 #define retardo 500
 
 void error();
@@ -10,7 +10,7 @@ void main (void){
    set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7
    set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7
    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
-   setup_oscillator(OSC_32MHZ);
+   setup_oscillator(OSC_16MHZ);
    int16 resultado=0;
    int8 operacion=0; //Variables operandos oper
    while(True){
