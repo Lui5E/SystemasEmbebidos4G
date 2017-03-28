@@ -2,17 +2,17 @@
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 #use delay(clock=32000000)
+#use standard_io(b)
+#use standard_io(a)
 #define retardo 500
 
 void error();
 
 void main (void){
-   set_tris_a(0b00000000);
-   set_tris_b(0b11110000);
    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
    setup_oscillator(OSC_32MHZ);
-   int16 resultado=0;
-   int8 operando1=0,operando2=0,operacion=0; //Variables operandos operacion
+   int16 operando1=0,operando2=0,resultado=0; //Variables operandos y resultados
+   int8 operacion=0; //variable para operaciones
    while(True){
    operando1=input_c();
    operando2=input_d();
@@ -35,6 +35,9 @@ void main (void){
 }   
 void error()
 {
+   int i;
+   for(i=0;i<5;i++)
+   {
    output_a(0b00111111);
    output_b(0b00001111);
    output_e(0b00001111);
@@ -43,4 +46,5 @@ void error()
    output_b(0b00000000);
    output_e(0b00001000);
    delay_ms(retardo);
+   }
 }

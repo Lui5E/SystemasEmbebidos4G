@@ -12,7 +12,8 @@ void main (void){
    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
    setup_oscillator(OSC_32MHZ);
    int16 resultado=0;
-   int8 operando1=0,operando2=0,operacion=0; //Variables operandos operacion
+   int8 operando1=0,operando2=0; //Variables operandos
+   int8 operacion=0; //variable para operaciones
    while(True){
    operando1=input_c();
    operando2=input_d();

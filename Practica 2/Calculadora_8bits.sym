@@ -3,56 +3,51 @@
 001     _RETURN_
 002     @SCRATCH
 003     @SCRATCH
-005-006 main.operando1
-007-008 main.operando2
-009-00A main.resultado
-00B     main.operacion
-00C-00D @MUL1616.P1
-00C     error.i
-00C-00D @DIV1616.P1
-00C     main.@SCRATCH1
-00D     main.@SCRATCH2
-00D     error.@SCRATCH1
-00E     @delay_ms1.P1
-00E-00F @MUL1616.P2
-00E-00F @DIV1616.P3
-010     @MUL1616.@SCRATCH1
-010     @DIV1616.@SCRATCH1
+005-006 main.resultado
+007     main.operando1
+008     main.operando2
+009     main.operacion
+00A     @DIV88.P1
+00A     main.@SCRATCH1
+00A     error.@SCRATCH1
+00B     @DIV88.P1
+00B     @delay_ms1.P2
+00B     main.@SCRATCH2
+00C     @DIV88.@SCRATCH1
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
 FBB     CCP_2
 FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1
 FBE     CCP_1_LOW
+FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @READ_PACKED_MEMORY.P1
 FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @READ_PACKED_MEMORY.P4
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-000004  @MUL1616
-000024  @delay_ms1
-00004A  error
-0000A0  @DIV1616
-0000E4  main
-0000E4  @cinit1
-0000FE  @cinit2
+000004  @delay_ms1
+00002A  error
+000074  @DIV88
+00009E  main
+00009E  @cinit1
+0000B8  @cinit2
 
 Project Directory:
     D:\SystemasEmbebidos4G\Practica 2\
 
 Project Files:
-    Calculadora_8bits.c                                     [25-mar-17 01:38  CRC=A7B5DBFD]
+    Calculadora_8bits.c                                     [27-mar-17 18:58  CRC=D4CFAFB1]
     C:\Program Files (x86)\PICC\Devices\18F4620.h           [10-sep-13 16:34  CRC=044A57BA]
 
-Source signature=B04A8B71
+Source signature=DD645F25
 
 Units:
     Calculadora_8bits (main)
