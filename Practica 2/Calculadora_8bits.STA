@@ -1,9 +1,9 @@
 
-ROM used:   574/65536 (1%)
-            574/65536 (1%) including unused fragments
+ROM used:   526/65536 (1%)
+            526/65536 (1%) including unused fragments
 
-            0.7 Average locations per line
-            15.5 Average locations per statement
+            0.6 Average locations per line
+            13.5 Average locations per statement
 
 RAM used:   8/3968 (0%) at main() level
             16/3968 (0%) worst case
@@ -13,36 +13,36 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   45    37 100  Calculadora_8bits.c
-  834     0   0  C:\Program Files (x86)\PICC\Devices\18F4620.h
+   50    39 100  Calculadora_8bits.c
+  834     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h
 ----- -----
-  879    37 Total
+  884    39 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     40   3    1             @delay_ms1
-0    356  31    4  1103  7.6  main
-0     32   3    5   250  3.2  @MUL1616
+0     40   4    1             @delay_ms1
+0    332  32    4  1167  7.6  main
+0     32   3    5             @MUL1616
 0     68   6    5   149  1.3  @DIV1616
-0     74   6    1   149  1.3  error
- Inline         0   149  1.3  @cinit1
+0     50   5    0   149  1.3  error
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               5
-    Statements              37
+    Functions               3
+    Statements              39
     Comments                158
-    Volume (V)              2434
-    Difficulty (D)          14.7
-    Effort to implement (E) 35771
-    Time to implement (T)   33 minutes
+    Volume (V)              1756
+    Difficulty (D)          9.9
+    Effort to implement (E) 17396
+    Time to implement (T)   16 minutes
     Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   10
-    Maintainability (MI)    139
+    Cyclomatic Complexity   9
+    Maintainability (MI)    47
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-0FFFE   570  64962  
+00004-0FFFE   522  65010  
 
 
 
