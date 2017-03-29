@@ -3,10 +3,7 @@
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 #use delay(clock=16000000)
 #define retardo 100
-#use fast_io(a)
-#use fast_io(b)
-#use fast_io(c)
-#use fast_io(d)
+
 void error();
 
 void main (void){

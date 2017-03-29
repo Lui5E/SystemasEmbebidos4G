@@ -1,21 +1,17 @@
 #include <18F4620.h>
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
-#use delay(clock=16000000)
-#define retardo 100
-#use fast_io(a)
-#use fast_io(b)
-#use fast_io(c)
-#use fast_io(d)
+#use delay(clock=32000000)
+#define retardo 500
+#bit suma=flags.0
+int flags;
 void error();
 
 void main (void){
-   setup_oscillator(OSC_16MHZ);
    set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7
    set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7
-   set_tris_c(0b11111111);
-   set_tris_d(0b11111111);
    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
+   setup_oscillator(OSC_32MHZ);
    int16 resultado=0;
    int8 operacion=0; //Variables operandos oper
    while(True){
@@ -28,7 +24,7 @@ void main (void){
    else if(operacion == 3) resultado = (long)input_c() * (long)input_d();
    else if(operacion == 4)
    {
-   if(input_d()==0) error() , delay_ms(2); //funcion de error 
+   if(input_d()==0) error(); //funcion de error 
    else resultado = (long)input_c() / (long)input_d();
    }
    output_a(resultado);
