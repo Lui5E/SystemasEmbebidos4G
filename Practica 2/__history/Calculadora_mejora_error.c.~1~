@@ -2,8 +2,7 @@
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 #use delay(clock=16000000)
-#define retardo 50
-#define contadorN 10
+#define retardo 100
 
 //Faltan los fast_io
  int16 error(int &contador);
@@ -41,7 +40,7 @@
  int16 error(int &contador)
  {
    int16 leds=0;
-   if(contador<contadorN)
+   if(contador<10)
    {
       leds=8191;
    }

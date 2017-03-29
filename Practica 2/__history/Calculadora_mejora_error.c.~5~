@@ -2,7 +2,7 @@
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 #use delay(clock=16000000)
-#define retardo 50
+#define retardo 10
 #define contadorN 10
 
 //Faltan los fast_io

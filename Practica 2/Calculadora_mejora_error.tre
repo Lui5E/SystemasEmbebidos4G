@@ -1,0 +1,7 @@
+ÀÄCalculadora_mejora_error
+   ÀÄmain  0/406  Ram=4
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@MUL1616  0/32  Ram=5
+      ÃÄerror  (Inline)  Ram=3
+      ³  ÀÄ@delay_ms1  0/42  Ram=1
+      ÀÄ@DIV1616  0/68  Ram=5

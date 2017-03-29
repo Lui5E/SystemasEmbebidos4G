@@ -2,11 +2,11 @@
 #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 #use delay(clock=16000000)
-#define retardo 50
+#define retardo 100
 #define contadorN 10
 
 //Faltan los fast_io
- int16 error(int &contador);
+ void error(int &contador, int &resultado);
  
  void main (void){
     setup_oscillator(OSC_16MHZ);//Generalmente este va primero
@@ -29,7 +29,7 @@
     {
     if(input_d()==0) 
     {
-       resultado=error(contador);  //funcion de error
+       error(contador,resultado);  //funcion de error
     }
     else resultado = (long)input_c() / (long)input_d();
     }
@@ -38,16 +38,15 @@
     output_e(resultado>>10);
     } 
  }   
- int16 error(int &contador)
+ void error(int &contador,int &resultado)
  {
-   int16 leds=0;
    if(contador<contadorN)
    {
-      leds=8191;
+      resultado=8191;
    }
    else
    {
-      leds=0;
+      resultado=0;
    }
    if(contador==20)
    {
