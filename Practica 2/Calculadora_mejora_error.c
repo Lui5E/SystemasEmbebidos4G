@@ -4,14 +4,19 @@
 #use delay(clock=16000000)
 #define retardo 50
 #define contadorN 10
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#use fast_io(d)
 
-//Faltan los fast_io
  int16 error(int &contador);
  
  void main (void){
     setup_oscillator(OSC_16MHZ);//Generalmente este va primero
     set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7
     set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7
+    set_tris_c(0b11111111);
+    set_tris_d(0b11111111);
   //Los tris de C y D?
     SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
     int8 contador=1;

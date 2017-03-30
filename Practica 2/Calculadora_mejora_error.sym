@@ -43,16 +43,16 @@ ROM Allocation:
 000092  main
 000092  @cinit1
 0000AC  @cinit2
-00017C  error
+00016C  error
 
 Project Directory:
     C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica 2\
 
 Project Files:
-    Calculadora_mejora_error.c                              [29-mar.-17 16:45  CRC=77CC6E29]
+    Calculadora_mejora_error.c                              [29-mar.-17 19:06  CRC=1A8CB138]
     ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 16:34  CRC=044A57BA]
 
-Source signature=80611D9D
+Source signature=232160AC
 
 Units:
     Calculadora_mejora_error (main)
