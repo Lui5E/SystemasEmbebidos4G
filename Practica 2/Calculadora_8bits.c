@@ -12,16 +12,15 @@
  int16 error(int &contador);
  
  void main (void){
-    setup_oscillator(OSC_16MHZ);//Generalmente este va primero
+    setup_oscillator(OSC_16MHZ);//16mhz
     set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7
     set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7
-    set_tris_c(0b11111111);
-    set_tris_d(0b11111111);
-  //Los tris de C y D?
+    set_tris_c(0b11111111); // input C0 C1 C2 C3 C4 C5 C6 C7 C8 
+    set_tris_d(0b11111111); // input D0 D1 D2 D3 D4 D5 D6 D7 D8 
     SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
-    int8 contador=1;
-    int16 resultado=0;
-    int8 operacion=0; //Variables operandos oper
+    int8 contador=1; // contador
+    int16 resultado=0; // variable resultado 16 bits
+    int8 operacion=0; //variable operacion
     while(True){
     if(input(PIN_B4)) operacion=1; //suma
     else if(input(PIN_B5)) operacion=2;//resta
@@ -34,7 +33,7 @@
     {
     if(input_d()==0) 
     {
-       resultado=error(contador);  //funcion de error
+       resultado=error(contador);  //funcion de error 
     }
     else resultado = (long)input_c() / (long)input_d();
     }
