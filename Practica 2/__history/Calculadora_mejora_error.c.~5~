@@ -1,0 +1,59 @@
+#include <18F4620.h>
+#fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
+#fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
+#use delay(clock=16000000)
+#define retardo 10
+#define contadorN 10
+
+//Faltan los fast_io
+ int16 error(int &contador);
+ 
+ void main (void){
+    setup_oscillator(OSC_16MHZ);//Generalmente este va primero
+    set_tris_a(0b00000000); // output A0 A1 A2 A3 A4 A5 A6 A7
+    set_tris_b(0b11110000); // output B0 B1 B2 B3 input B4 B5 B6 B7
+  //Los tris de C y D?
+    SETUP_ADC_PORTS(NO_ANALOGS);// para conversion a todos los puertos analogos a digitales
+    int8 contador=1;
+    int16 resultado=0;
+    int8 operacion=0; //Variables operandos oper
+    while(True){
+    if(input(PIN_B4)) operacion=1; //suma
+    else if(input(PIN_B5)) operacion=2;//resta
+    else if(input(PIN_B6)) operacion=3;//multiplicacion
+    else if(input(PIN_B7)) operacion=4;//divicion
+    if(operacion==1) resultado = (long)input_c() + (long)input_d();
+    else if(operacion == 2) resultado = (long)input_c() - (long)input_d();
+    else if(operacion == 3) resultado = (long)input_c() * (long)input_d();
+    else if(operacion == 4)
+    {
+    if(input_d()==0) 
+    {
+       resultado=error(contador);  //funcion de error
+    }
+    else resultado = (long)input_c() / (long)input_d();
+    }
+    output_a(resultado);
+    output_b(resultado>>6);
+    output_e(resultado>>10);
+    } 
+ }   
+ int16 error(int &contador)
+ {
+   int16 leds=0;
+   if(contador<contadorN)
+   {
+      leds=8191;
+   }
+   else
+   {
+      leds=0;
+   }
+   if(contador==20)
+   {
+      contador=0;
+   }
+   contador++;
+   delay_ms(retardo);
+   return leds;
+}

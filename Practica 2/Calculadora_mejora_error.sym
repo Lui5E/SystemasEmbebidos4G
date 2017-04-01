@@ -1,0 +1,78 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.contador
+006-007 main.resultado
+008     main.operacion
+009-00A error.leds
+009     main.@SCRATCH1
+00A     main.@SCRATCH2
+00B     main.@SCRATCH3
+00C     @delay_ms1.P1
+00C     main.@SCRATCH4
+00D-00E @MUL1616.P1
+00D-00E @DIV1616.P2
+00F-010 @DIV1616.P1
+00F-010 @MUL1616.P2
+011     @MUL1616.@SCRATCH1
+011     @DIV1616.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @MUL1616
+000024  @delay_ms1
+00004E  @DIV1616
+000092  main
+000092  @cinit1
+0000AC  @cinit2
+00016C  error
+
+Project Directory:
+    C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica 2\
+
+Project Files:
+    Calculadora_mejora_error.c                              [29-mar.-17 19:06  CRC=1A8CB138]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 16:34  CRC=044A57BA]
+
+Source signature=232160AC
+
+Units:
+    Calculadora_mejora_error (main)
+
+Compiler Settings:
+    Processor:      PIC18F4620
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Calculadora_mejora_error.xsym
+    Errors:      Calculadora_mejora_error.err
+    Ext Symbols: Calculadora_mejora_error.esym
+    INHX32:      Calculadora_mejora_error.hex
+    Symbols:     Calculadora_mejora_error.sym
+    List:        Calculadora_mejora_error.lst
+    Debug/COFF:  Calculadora_mejora_error.cof
+    Project:     Calculadora_mejora_error.ccspjt
+    Call Tree:   Calculadora_mejora_error.tre
+    Statistics:  Calculadora_mejora_error.STA
