@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.012, 41559               02-abr.-17 20:27
+CCS PCH C Compiler, Version 5.012, 41559               03-abr.-17 20:38
 
                Filename:   C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica 3\ProgramaPrincipal.lst
 
-               ROM used:   350 bytes (1%)
-                           Largest free fragment is 65182
-               RAM used:   28 (1%) at main() level
-                           31 (1%) worst case
-               Stack used: 2 locations (1 in main + 1 for interrupts)
+               ROM used:   314 bytes (0%)
+                           Largest free fragment is 65218
+               RAM used:   30 (1%) at main() level
+                           30 (1%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-00000:  GOTO   00C6
+00000:  GOTO   00A4
 *
 00008:  MOVWF  04
 0000A:  MOVFF  FD8,05
@@ -63,170 +63,172 @@ CCS PCH C Compiler, Version 5.012, 41559               02-abr.-17 20:27
 .................... //// form are not restricted in any way.                               //// 
 .................... /////////////////////////////////////////////////////////////////////////// 
 .................... #device PIC18F4620 
-*
-0009E:  MOVF   1D,W
-000A0:  CLRF   01
-000A2:  SUBWF  1C,W
-000A4:  BC    00AC
-000A6:  MOVFF  1C,00
-000AA:  BRA    00C4
-000AC:  CLRF   00
-000AE:  MOVLW  08
-000B0:  MOVWF  1E
-000B2:  RLCF   1C,F
-000B4:  RLCF   00,F
-000B6:  MOVF   1D,W
-000B8:  SUBWF  00,W
-000BA:  BTFSC  FD8.0
-000BC:  MOVWF  00
-000BE:  RLCF   01,F
-000C0:  DECFSZ 1E,F
-000C2:  BRA    00B2
-000C4:  RETURN 0
 ....................  
 .................... #list 
 ....................  
 .................... #USE delay(clock=16000000)        //Configurando el reloj a 32Mhz 
-.................... #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
+.................... #fuses XT, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT 
 .................... #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG 
-.................... int contadorDesvordamiento=0; 
-.................... #int_TIMER0 
-.................... void TIMER0_funcion(void) 
+.................... #use fast_io(a) 
+.................... #use fast_io(b) 
+.................... #use fast_io(c) 
+.................... #use fast_io(d) 
+.................... int contador_100ms=0;         //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
+.................... int contador_500ms=0;         //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
+.................... int contador_1000ms=0;        //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
+.................... int contador_1500ms=0;        //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
+.................... #int_TIMER0                  //Declaramos interrupción de TIMER0 
+.................... void TIMER0_funcion(void)    //Funcion de interupción de TIMER0. Cada que ocurra una interrupcion de TIMER0 ingcrementara en uno las variables de los contadores de tiempo 
 .................... { 
-....................    contadorDesvordamiento++; 
-*
+....................    contador_100ms++;          
 00096:  INCF   16,F
-00098:  BCF    FF2.2
-0009A:  GOTO   0054
+....................    contador_500ms++; 
+00098:  INCF   17,F
+....................    contador_1000ms++; 
+0009A:  INCF   18,F
+....................    contador_1500ms++; 
+0009C:  INCF   19,F
+0009E:  BCF    FF2.2
+000A0:  GOTO   0054
 .................... } 
 ....................     
 ....................    void main(void) 
-*
-000C6:  CLRF   FF8
-000C8:  BCF    FD0.7
-000CA:  BSF    07.7
-000CC:  CLRF   16
-000CE:  MOVF   FC1,W
-000D0:  ANDLW  C0
-000D2:  IORLW  0F
-000D4:  MOVWF  FC1
-000D6:  MOVLW  07
-000D8:  MOVWF  FB4
-000DA:  CLRF   17
-000DC:  CLRF   18
-000DE:  CLRF   19
-000E0:  CLRF   1A
-000E2:  CLRF   1B
+000A4:  CLRF   FF8
+000A6:  BCF    FD0.7
+000A8:  BSF    07.7
+000AA:  CLRF   16
+000AC:  CLRF   17
+000AE:  CLRF   18
+000B0:  CLRF   19
+000B2:  MOVF   FC1,W
+000B4:  ANDLW  C0
+000B6:  IORLW  0F
+000B8:  MOVWF  FC1
+000BA:  MOVLW  07
+000BC:  MOVWF  FB4
+000BE:  MOVLW  80
+000C0:  MOVWF  1A
+000C2:  MOVWF  1B
+000C4:  MOVWF  1C
+000C6:  MOVWF  1D
 ....................    { 
-....................       int contadorDesvordamiento=0;   //Variable para contabilizar en numero de veces que se ejecuta la interrupcion TIMER0 
-....................       int8 conAnilloA=0x10000000;            //Variable con el valor del valor para el contador de anillo del puerto A 
-....................       int8 conAnilloB=0x10000000;             //Variable con el valor del valor para el contador de anillo del puerto B 
-....................       int8 conAnilloC=0x10000000;             //Variable con el valor del valor para el contador de anillo del puerto C 
-....................       int8 conAnilloD=0x10000000;             //Variable con el valor del valor para el contador de anillo del puerto D 
-....................       setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256);   //Configuracion de la fuente y divisor del TMR0 
-000E4:  MOVLW  87
-000E6:  MOVWF  FD5
+....................       int8 conAnilloA=0x80;             //Variable con el valor del valor para el contador de anillo del puerto A. Lo ponemos en el MSB 
+....................       int8 conAnilloB=0x80;             //Variable con el valor del valor para el contador de anillo del puerto B. Lo ponemos en el MSB 
+....................       int8 conAnilloC=0x80;             //Variable con el valor del valor para el contador de anillo del puerto C. Lo ponemos en el MSB 
+....................       int8 conAnilloD=0x80;             //Variable con el valor del valor para el contador de anillo del puerto D. Lo ponemos en el MSB 
+....................       setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256);   //Configuracion de la fuente y divisor del TMR0 <<<<<<Acomodar 
+000C8:  MOVLW  87
+000CA:  MOVWF  FD5
 ....................       enable_interrupts(int_TIMER0);  //Abilitamos la interrupcion TIMER0 
-000E8:  BSF    FF2.5
+000CC:  BSF    FF2.5
 ....................       enable_interrupts(GLOBAL);      //Abilitamos las interrupciones globales 
-000EA:  MOVLW  C0
-000EC:  IORWF  FF2,F
+000CE:  MOVLW  C0
+000D0:  IORWF  FF2,F
+....................       // 
+....................       //Configuramos puertos A,B,C y D como puertos de salida 
+....................       set_tris_a(0); 
+000D2:  MOVLW  00
+000D4:  MOVWF  F92
+....................       set_tris_b(0); 
+000D6:  MOVWF  F93
+....................       set_tris_c(0); 
+000D8:  MOVWF  F94
+....................       set_tris_d(0); 
+000DA:  MOVWF  F95
 ....................       while(1)                        //Ciclo infinito 
 ....................       { 
-....................          if(contadorDesvordamiento%1)   //Cada que pase una interrupción en TMR0, se ejecuta contador de anillo del puerto A 
-000EE:  ANDLW  00
-000F0:  BZ    0102
+....................          if(contador_100ms>=6)   //Si nuestro contador_100ms es mayor o igual a 6 quiere decir que ya han pasado 100ms desde que se desplazo conAnilloA entonces, se ejecuta contador de anillo del puerto A 
+000DC:  MOVF   16,W
+000DE:  SUBLW  05
+000E0:  BC    00F0
 ....................          { 
-....................             output_a(conAnilloA);      //Imprimimos contador 
-000F2:  CLRF   F92
-000F4:  MOVFF  18,F89
-....................             conAnilloA>>=1;            //Desplazamos el bit 
-000F8:  BCF    FD8.0
-000FA:  RRCF   18,F
+....................             conAnilloA>>=1;            //Desplazamos el bit del contador de anilo del puerto A 
+000E2:  BCF    FD8.0
+000E4:  RRCF   1A,F
+....................             contador_100ms=0;          //Regresemos el valor de contador_100ms a 0 
+000E6:  CLRF   16
 ....................             if(conAnilloA==0)          //Si el valor de conAnilloA sobrepaso el LSM, devuelbe el valor al MSB 
-000FC:  MOVF   18,F
-000FE:  BNZ   0102
+000E8:  MOVF   1A,F
+000EA:  BNZ   00F0
 ....................             { 
-....................                conAnilloA=0x10000000;  
-00100:  CLRF   18
+....................                conAnilloA=0x80;  
+000EC:  MOVLW  80
+000EE:  MOVWF  1A
 ....................             } 
 ....................          } 
-....................          if(contadorDesvordamiento%5)   //Cada cinco interrupciónes de TMR0, se ejecuta contador de anillo del puerto B 
-00102:  MOVFF  17,1C
-00106:  MOVLW  05
-00108:  MOVWF  1D
-0010A:  RCALL  009E
-0010C:  MOVF   00,W
-0010E:  BZ    0120
+....................          if(contador_500ms>=30)   //Si nuestro contador_500ms es mayor o igual a 30 quiere decir que ya han pasado 500ms desde que se desplazo conAnilloB entonces, se ejecuta contador de anillo del puerto B 
+000F0:  MOVF   17,W
+000F2:  SUBLW  1D
+000F4:  BC    0104
 ....................          { 
-....................             output_b(conAnilloB);      //Imprimimos contador 
-00110:  CLRF   F93
-00112:  MOVFF  19,F8A
-....................             conAnilloB>>=1;            //Desplazamos el bit 
-00116:  BCF    FD8.0
-00118:  RRCF   19,F
+....................             conAnilloB>>=1;            //Desplazamos el bit del contador de anillo del puerto B 
+000F6:  BCF    FD8.0
+000F8:  RRCF   1B,F
+....................             contador_500ms=0;          //Regresemos el valor de contador_500ms a 0 
+000FA:  CLRF   17
 ....................             if(conAnilloB==0)          //Si el valor de conAnilloB sobrepaso el LSM, devuelbe el valor al MSB 
-0011A:  MOVF   19,F
-0011C:  BNZ   0120
+000FC:  MOVF   1B,F
+000FE:  BNZ   0104
 ....................             { 
-....................                conAnilloB=0x10000000;  
-0011E:  CLRF   19
+....................                conAnilloB=0x80;  
+00100:  MOVLW  80
+00102:  MOVWF  1B
 ....................             } 
 ....................          } 
-....................          if(contadorDesvordamiento%10)   //Cada diez interrupciónes de TMR0, se ejecuta contador de anillo del puerto C 
-00120:  MOVFF  17,1C
-00124:  MOVLW  0A
-00126:  MOVWF  1D
-00128:  RCALL  009E
-0012A:  MOVF   00,W
-0012C:  BZ    013E
+....................          if(contador_1000ms>=61)   //Si nuestro contador_1000ms es mayor o igual a 61 quiere decir que ya han pasado 1000ms desde que se desplazo conAnilloC entonces, se ejecuta contador de anillo del puerto C 
+00104:  MOVF   18,W
+00106:  SUBLW  3C
+00108:  BC    0116
 ....................          { 
-....................             output_c(conAnilloC);      //Imprimimos contador 
-0012E:  CLRF   F94
-00130:  MOVFF  1A,F8B
-....................             conAnilloC>>=1;            //Desplazamos el bit 
-00134:  BCF    FD8.0
-00136:  RRCF   1A,F
+....................             conAnilloC>>=1;            //Desplazamos el bit del contador de anilo del puerto C 
+0010A:  BCF    FD8.0
+0010C:  RRCF   1C,F
+....................             contador_1000ms=0;         //Regresemos el valor de contador_1000ms a 0 
+0010E:  CLRF   18
 ....................             if(conAnilloC==0)          //Si el valor de conAnilloC sobrepaso el LSM, devuelbe el valor al MSB 
-00138:  MOVF   1A,F
-0013A:  BNZ   013E
+00110:  MOVF   1C,F
+00112:  BNZ   0116
 ....................             { 
 ....................                conAnilloC=0x10000000;  
-0013C:  CLRF   1A
+00114:  CLRF   1C
 ....................             } 
 ....................          } 
-....................          if(contadorDesvordamiento%15)   //Cada quince interrupciónes de TMR0, se ejecuta contador de anillo del puerto D 
-0013E:  MOVFF  17,1C
-00142:  MOVLW  0F
-00144:  MOVWF  1D
-00146:  RCALL  009E
-00148:  MOVF   00,W
-0014A:  BZ    015E
+....................          if(contador_1500ms>=91)   //Si nuestro contador_1500ms es mayor o igual a 91 quiere decir que ya han pasado 1500ms desde que se desplazo conAnilloD entonces, se ejecuta contador de anillo del puerto D 
+00116:  MOVF   19,W
+00118:  SUBLW  5A
+0011A:  BC    012A
 ....................          { 
-....................             output_d(conAnilloD);      //Imprimimos contador 
-0014C:  CLRF   F95
-0014E:  MOVFF  1B,F8C
-....................             conAnilloD>>=1;            //Desplazamos el bit 
-00152:  BCF    FD8.0
-00154:  RRCF   1B,F
+....................             conAnilloD>>=1;            //Desplazamos el bit del contador de anilo del puerto D 
+0011C:  BCF    FD8.0
+0011E:  RRCF   1D,F
+....................             contador_1500ms=0;         //Regresemos el valor de contador_1500ms a 0 
+00120:  CLRF   19
 ....................             if(conAnilloD==0)          //Si el valor de conAnilloD sobrepaso el LSM, devuelbe el valor al MSB 
-00156:  MOVF   1B,F
-00158:  BNZ   015C
+00122:  MOVF   1D,F
+00124:  BNZ   012A
 ....................             { 
-....................                conAnilloD=0x10000000;  
-0015A:  CLRF   1B
+....................                conAnilloD=0x80;  
+00126:  MOVLW  80
+00128:  MOVWF  1D
 ....................             } 
-....................             contadorDesvordamiento=0;  //Devolvemos el valor del contador de desvordamientos del TMR0 a 0 para que solo cuente de 0 a 15 
-0015C:  CLRF   17
 ....................          } 
-0015E:  BRA    00EE
+....................          //Imprimimos contadores de anillos de los puertos A,B,C y D 
+....................          output_a(conAnilloA); 
+0012A:  MOVFF  1A,F89
+....................          output_b(conAnilloB); 
+0012E:  MOVFF  1B,F8A
+....................          output_c(conAnilloC); 
+00132:  MOVFF  1C,F8B
+....................          output_d(conAnilloD); 
+00136:  MOVFF  1D,F8C
+0013A:  BRA    00DC
 ....................           
 ....................       } 
 ....................    } 
-00160:  SLEEP 
+0013C:  SLEEP 
 
 Configuration Fuses:
-   Word  1: 0800   INTRC_IO NOFCMEN NOIESO
+   Word  1: 0100   XT NOFCMEN NOIESO
    Word  2: 1E18   PUT NOBROWNOUT BORV21 NOWDT WDT32768
    Word  3: 0500   CCP2C1 NOPBADEN LPT1OSC NOMCLR
    Word  4: 0081   STVREN NOLVP NOXINST NODEBUG

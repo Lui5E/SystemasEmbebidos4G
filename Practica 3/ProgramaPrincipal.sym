@@ -21,48 +21,46 @@
 013     @INTERRUPT_AREA
 014     @INTERRUPT_AREA
 015     @INTERRUPT_AREA
-016     contadorDesvordamiento
-017     MAIN.contadorDesvordamiento
-018     MAIN.conAnilloA
-019     MAIN.conAnilloB
-01A     MAIN.conAnilloC
-01B     MAIN.conAnilloD
-01C     @DIV88.P1
-01D     @DIV88.P1
-01E     @DIV88.@SCRATCH1
+016     contador_100ms
+017     contador_500ms
+018     contador_1000ms
+019     contador_1500ms
+01A     MAIN.conAnilloA
+01B     MAIN.conAnilloB
+01C     MAIN.conAnilloC
+01D     MAIN.conAnilloD
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
 FBB     CCP_2_LOW
 FBB     CCP_2
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE     CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @READ_PACKED_MEMORY.P1
 FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P1
 FE9-FEA @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
-FF6-FF8 @READ_PROGRAM_MEMORY.P1
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000096  TIMER0_funcion
-00009E  @DIV88
-0000C6  MAIN
-0000C6  @cinit1
-0000DA  @cinit2
+0000A4  MAIN
+0000A4  @cinit1
+0000BE  @cinit2
 
 Project Directory:
     C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica 3\
 
 Project Files:
-    ProgramaPrincipal.c                                     [02-abr.-17 20:27  CRC=8536AB85]
+    ProgramaPrincipal.c                                     [03-abr.-17 20:38  CRC=AEA302C7]
     ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 17:34  CRC=044A57BA]
 
-Source signature=8DCB5AF9
+Source signature=B737B23B
 
 Units:
     ProgramaPrincipal (main)

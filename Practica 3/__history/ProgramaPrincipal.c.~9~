@@ -21,7 +21,7 @@ void TIMER0_funcion(void)    //Funcion de interupción de TIMER0. Cada que ocurra
    
    void main(void)
    {
-      int8 conAnilloA=0x80;             //Variable con el valor del valor para el contador de anillo del puerto A. Lo ponemos en el MSB
+      int8 conAnilloA=128;             //Variable con el valor del valor para el contador de anillo del puerto A. Lo ponemos en el MSB
       int8 conAnilloB=0x80;             //Variable con el valor del valor para el contador de anillo del puerto B. Lo ponemos en el MSB
       int8 conAnilloC=0x80;             //Variable con el valor del valor para el contador de anillo del puerto C. Lo ponemos en el MSB
       int8 conAnilloD=0x80;             //Variable con el valor del valor para el contador de anillo del puerto D. Lo ponemos en el MSB
