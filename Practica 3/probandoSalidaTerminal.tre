@@ -1,0 +1,35 @@
+ÀÄprobandoSalidaTerminal
+   ÀÄmain  0/188  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGCN_638  0/32  Ram=3
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PRINTF_D_638  0/170  Ram=6
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PRINTF_D_638  0/170  Ram=6
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PRINTF_D_638  0/170  Ram=6
+      ³  ÀÄ*
+      ÀÄ@PUTCHAR_1_  0/66  Ram=1

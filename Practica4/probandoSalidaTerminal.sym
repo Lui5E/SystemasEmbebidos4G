@@ -1,0 +1,92 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.primerOperando
+006     main.segundoOperando
+007     main.operacion
+008-00B main.resultado
+00C     main.opcion
+00D     @PRINTF_D_638.P1
+00D     @PSTRINGCN_638.P2
+00D     @GETCH_1_.@SCRATCH1
+00D     @PSTRINGC_638.@SCRATCH1
+00E     @PRINTF_D_638.P1
+00E     @PSTRINGC_638.@SCRATCH2
+00E     @PSTRINGCN_638.@SCRATCH1
+00F     @PSTRINGCN_638.@SCRATCH2
+00F     @PRINTF_D_638.@SCRATCH1
+010     @PRINTF_D_638.@SCRATCH2
+011     @PRINTF_D_638.@SCRATCH3
+012     @PRINTF_D_638.@SCRATCH4
+013     @DIV88.P1
+013     @PUTCHAR_1_.P2
+014     @DIV88.P1
+015     @DIV88.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const652.call
+000016  @const654.call
+000032  @const655.call
+000050  @const656.call
+000070  @const657.call
+0000BE  @const658.call
+0000F6  @PUTCHAR_1_
+000138  @PSTRINGC_638
+000158  @GETCH_1_
+00019E  @PSTRINGCN_638
+0001BE  @DIV88
+0001E6  @PRINTF_D_638
+000290  main
+000290  @cinit1
+0002AE  @cinit2
+
+Project Directory:
+    C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\
+
+Project Files:
+    probandoSalidaTerminal.c                                [20-abr.-17 11:54  CRC=9D7BA2FC]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 17:34  CRC=044A57BA]
+
+Source signature=A6105270
+
+Units:
+    probandoSalidaTerminal (main)
+
+Compiler Settings:
+    Processor:      PIC18F4620
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   probandoSalidaTerminal.xsym
+    Errors:      probandoSalidaTerminal.err
+    Ext Symbols: probandoSalidaTerminal.esym
+    INHX32:      probandoSalidaTerminal.hex
+    Symbols:     probandoSalidaTerminal.sym
+    List:        probandoSalidaTerminal.lst
+    Debug/COFF:  probandoSalidaTerminal.cof
+    Project:     probandoSalidaTerminal.ccspjt
+    Call Tree:   probandoSalidaTerminal.tre
+    Statistics:  probandoSalidaTerminal.STA

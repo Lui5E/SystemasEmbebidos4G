@@ -1,10 +1,10 @@
-CCS PCH C Compiler, Version 5.012, 41559               03-abr.-17 20:38
+CCS PCH C Compiler, Version 5.012, 41559               04-abr.-17 20:26
 
                Filename:   C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica 3\ProgramaPrincipal.lst
 
-               ROM used:   314 bytes (0%)
-                           Largest free fragment is 65218
-               RAM used:   30 (1%) at main() level
+               ROM used:   340 bytes (1%)
+                           Largest free fragment is 65192
+               RAM used:   26 (1%) at main() level
                            30 (1%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
@@ -77,7 +77,7 @@ CCS PCH C Compiler, Version 5.012, 41559               03-abr.-17 20:38
 .................... int contador_500ms=0;         //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
 .................... int contador_1000ms=0;        //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
 .................... int contador_1500ms=0;        //Declaramos variable contador para tiempo de 100ms. Sabremos cuantas veces se ha ejecutado la interrupción 
-.................... #int_TIMER0                  //Declaramos interrupción de TIMER0 
+.................... #int_timer0                  //Declaramos interrupción de TIMER0 
 .................... void TIMER0_funcion(void)    //Funcion de interupción de TIMER0. Cada que ocurra una interrupcion de TIMER0 ingcrementara en uno las variables de los contadores de tiempo 
 .................... { 
 ....................    contador_100ms++;          
@@ -106,126 +106,143 @@ CCS PCH C Compiler, Version 5.012, 41559               03-abr.-17 20:38
 000B8:  MOVWF  FC1
 000BA:  MOVLW  07
 000BC:  MOVWF  FB4
-000BE:  MOVLW  80
-000C0:  MOVWF  1A
-000C2:  MOVWF  1B
-000C4:  MOVWF  1C
-000C6:  MOVWF  1D
 ....................    { 
-....................       int8 conAnilloA=0x80;             //Variable con el valor del valor para el contador de anillo del puerto A. Lo ponemos en el MSB 
+....................       setup_oscillator(OSC_16MHZ); 
+000BE:  MOVLW  60
+000C0:  MOVWF  FD3
+000C2:  MOVLW  40
+000C4:  MOVWF  F9B
+000C6:  MOVF   FD3,W
+....................       SETUP_ADC_PORTS(NO_ANALOGS); 
+000C8:  MOVF   FC1,W
+000CA:  ANDLW  C0
+000CC:  IORLW  0F
+000CE:  MOVWF  FC1
+....................       int8 conAnilloA=0x20;             //Variable con el valor del valor para el contador de anillo del puerto A. Lo ponemos en el MSB 
 ....................       int8 conAnilloB=0x80;             //Variable con el valor del valor para el contador de anillo del puerto B. Lo ponemos en el MSB 
 ....................       int8 conAnilloC=0x80;             //Variable con el valor del valor para el contador de anillo del puerto C. Lo ponemos en el MSB 
-....................       int8 conAnilloD=0x80;             //Variable con el valor del valor para el contador de anillo del puerto D. Lo ponemos en el MSB 
-....................       setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256);   //Configuracion de la fuente y divisor del TMR0 <<<<<<Acomodar 
-000C8:  MOVLW  87
-000CA:  MOVWF  FD5
+....................       int8 conAnilloD=0x80;             //Variable con el valor del valor para el contador de anillo del puerto D. Lo ponemos en el MSB} 
+000D0:  MOVLW  20
+000D2:  MOVWF  1A
+000D4:  MOVLW  80
+000D6:  MOVWF  1B
+000D8:  MOVWF  1C
+000DA:  MOVWF  1D
+....................       set_timer0(0); 
+000DC:  CLRF   FD7
+000DE:  CLRF   FD6
+....................       setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256|T0_8_BIT);   //Configuracion de la fuente y divisor del TMR0 <<<<<<Acomodar 
+000E0:  MOVLW  C7
+000E2:  MOVWF  FD5
 ....................       enable_interrupts(int_TIMER0);  //Abilitamos la interrupcion TIMER0 
-000CC:  BSF    FF2.5
-....................       enable_interrupts(GLOBAL);      //Abilitamos las interrupciones globales 
-000CE:  MOVLW  C0
-000D0:  IORWF  FF2,F
+000E4:  BSF    FF2.5
+....................       enable_interrupts(GLOBAL);      //Abilitamos las interrupciones globales    
+000E6:  MOVLW  C0
+000E8:  IORWF  FF2,F
 ....................       // 
 ....................       //Configuramos puertos A,B,C y D como puertos de salida 
 ....................       set_tris_a(0); 
-000D2:  MOVLW  00
-000D4:  MOVWF  F92
+000EA:  MOVLW  00
+000EC:  MOVWF  F92
 ....................       set_tris_b(0); 
-000D6:  MOVWF  F93
+000EE:  MOVWF  F93
 ....................       set_tris_c(0); 
-000D8:  MOVWF  F94
+000F0:  MOVWF  F94
 ....................       set_tris_d(0); 
-000DA:  MOVWF  F95
-....................       while(1)                        //Ciclo infinito 
+000F2:  MOVWF  F95
+....................       while(True)                        //Ciclo infinito 
 ....................       { 
 ....................          if(contador_100ms>=6)   //Si nuestro contador_100ms es mayor o igual a 6 quiere decir que ya han pasado 100ms desde que se desplazo conAnilloA entonces, se ejecuta contador de anillo del puerto A 
-000DC:  MOVF   16,W
-000DE:  SUBLW  05
-000E0:  BC    00F0
+000F4:  MOVF   16,W
+000F6:  SUBLW  05
+000F8:  BC    0108
 ....................          { 
 ....................             conAnilloA>>=1;            //Desplazamos el bit del contador de anilo del puerto A 
-000E2:  BCF    FD8.0
-000E4:  RRCF   1A,F
+000FA:  BCF    FD8.0
+000FC:  RRCF   1A,F
 ....................             contador_100ms=0;          //Regresemos el valor de contador_100ms a 0 
-000E6:  CLRF   16
+000FE:  CLRF   16
 ....................             if(conAnilloA==0)          //Si el valor de conAnilloA sobrepaso el LSM, devuelbe el valor al MSB 
-000E8:  MOVF   1A,F
-000EA:  BNZ   00F0
+00100:  MOVF   1A,F
+00102:  BNZ   0108
 ....................             { 
-....................                conAnilloA=0x80;  
-000EC:  MOVLW  80
-000EE:  MOVWF  1A
+....................                conAnilloA=0x20;  
+00104:  MOVLW  20
+00106:  MOVWF  1A
 ....................             } 
 ....................          } 
 ....................          if(contador_500ms>=30)   //Si nuestro contador_500ms es mayor o igual a 30 quiere decir que ya han pasado 500ms desde que se desplazo conAnilloB entonces, se ejecuta contador de anillo del puerto B 
-000F0:  MOVF   17,W
-000F2:  SUBLW  1D
-000F4:  BC    0104
+00108:  MOVF   17,W
+0010A:  SUBLW  1D
+0010C:  BC    011C
 ....................          { 
 ....................             conAnilloB>>=1;            //Desplazamos el bit del contador de anillo del puerto B 
-000F6:  BCF    FD8.0
-000F8:  RRCF   1B,F
+0010E:  BCF    FD8.0
+00110:  RRCF   1B,F
 ....................             contador_500ms=0;          //Regresemos el valor de contador_500ms a 0 
-000FA:  CLRF   17
+00112:  CLRF   17
 ....................             if(conAnilloB==0)          //Si el valor de conAnilloB sobrepaso el LSM, devuelbe el valor al MSB 
-000FC:  MOVF   1B,F
-000FE:  BNZ   0104
+00114:  MOVF   1B,F
+00116:  BNZ   011C
 ....................             { 
 ....................                conAnilloB=0x80;  
-00100:  MOVLW  80
-00102:  MOVWF  1B
+00118:  MOVLW  80
+0011A:  MOVWF  1B
 ....................             } 
 ....................          } 
 ....................          if(contador_1000ms>=61)   //Si nuestro contador_1000ms es mayor o igual a 61 quiere decir que ya han pasado 1000ms desde que se desplazo conAnilloC entonces, se ejecuta contador de anillo del puerto C 
-00104:  MOVF   18,W
-00106:  SUBLW  3C
-00108:  BC    0116
+0011C:  MOVF   18,W
+0011E:  SUBLW  3C
+00120:  BC    0130
 ....................          { 
 ....................             conAnilloC>>=1;            //Desplazamos el bit del contador de anilo del puerto C 
-0010A:  BCF    FD8.0
-0010C:  RRCF   1C,F
+00122:  BCF    FD8.0
+00124:  RRCF   1C,F
 ....................             contador_1000ms=0;         //Regresemos el valor de contador_1000ms a 0 
-0010E:  CLRF   18
+00126:  CLRF   18
 ....................             if(conAnilloC==0)          //Si el valor de conAnilloC sobrepaso el LSM, devuelbe el valor al MSB 
-00110:  MOVF   1C,F
-00112:  BNZ   0116
+00128:  MOVF   1C,F
+0012A:  BNZ   0130
 ....................             { 
-....................                conAnilloC=0x10000000;  
-00114:  CLRF   1C
+....................                conAnilloC=0x80;  
+0012C:  MOVLW  80
+0012E:  MOVWF  1C
 ....................             } 
 ....................          } 
 ....................          if(contador_1500ms>=91)   //Si nuestro contador_1500ms es mayor o igual a 91 quiere decir que ya han pasado 1500ms desde que se desplazo conAnilloD entonces, se ejecuta contador de anillo del puerto D 
-00116:  MOVF   19,W
-00118:  SUBLW  5A
-0011A:  BC    012A
+00130:  MOVF   19,W
+00132:  SUBLW  5A
+00134:  BC    0144
 ....................          { 
 ....................             conAnilloD>>=1;            //Desplazamos el bit del contador de anilo del puerto D 
-0011C:  BCF    FD8.0
-0011E:  RRCF   1D,F
+00136:  BCF    FD8.0
+00138:  RRCF   1D,F
 ....................             contador_1500ms=0;         //Regresemos el valor de contador_1500ms a 0 
-00120:  CLRF   19
+0013A:  CLRF   19
 ....................             if(conAnilloD==0)          //Si el valor de conAnilloD sobrepaso el LSM, devuelbe el valor al MSB 
-00122:  MOVF   1D,F
-00124:  BNZ   012A
+0013C:  MOVF   1D,F
+0013E:  BNZ   0144
 ....................             { 
 ....................                conAnilloD=0x80;  
-00126:  MOVLW  80
-00128:  MOVWF  1D
+00140:  MOVLW  80
+00142:  MOVWF  1D
 ....................             } 
 ....................          } 
 ....................          //Imprimimos contadores de anillos de los puertos A,B,C y D 
 ....................          output_a(conAnilloA); 
-0012A:  MOVFF  1A,F89
+00144:  MOVFF  1A,F89
 ....................          output_b(conAnilloB); 
-0012E:  MOVFF  1B,F8A
+00148:  MOVFF  1B,F8A
 ....................          output_c(conAnilloC); 
-00132:  MOVFF  1C,F8B
+0014C:  MOVFF  1C,F8B
 ....................          output_d(conAnilloD); 
-00136:  MOVFF  1D,F8C
-0013A:  BRA    00DC
+00150:  MOVFF  1D,F8C
+00154:  BRA    00F4
 ....................           
 ....................       } 
 ....................    } 
-0013C:  SLEEP 
+....................     
+00156:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0100   XT NOFCMEN NOIESO

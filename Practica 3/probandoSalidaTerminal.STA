@@ -1,0 +1,56 @@
+
+ROM used:   844/65536 (1%)
+            844/65536 (1%) including unused fragments
+
+            1.0 Average locations per line
+            60.3 Average locations per statement
+
+RAM used:   4/3968 (0%) at main() level
+            21/3968 (1%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   33    14 100  probandoSalidaTerminal.c
+  834     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h
+----- -----
+  867    14 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     66   4    1             @PUTCHAR_1_
+0     70   4    1             @GETCH_1_
+0    188  11    0   391  2.8  main
+0     18   1    0             @const652
+0     32   2    2             @PSTRINGC_638
+0     28   2    0             @const654
+0     30   2    0             @const655
+0     32   2    0             @const656
+0     78   5    0             @const657
+0     56   3    0             @const658
+0     32   2    3             @PSTRINGCN_638
+0     40   2    3             @DIV88
+0    170  10    6             @PRINTF_D_638
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              14
+    Comments                151
+    Volume (V)              418
+    Difficulty (D)          2.0
+    Effort to implement (E) 853
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    106
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0FFFE   840  64692  
+
+
+

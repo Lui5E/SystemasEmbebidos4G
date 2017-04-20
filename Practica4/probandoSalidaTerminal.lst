@@ -1,0 +1,462 @@
+CCS PCH C Compiler, Version 5.012, 41559               20-abr.-17 11:54
+
+               Filename:   C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\probandoSalidaTerminal.lst
+
+               ROM used:   844 bytes (1%)
+                           Largest free fragment is 64692
+               RAM used:   4 (0%) at main() level
+                           21 (1%) worst case
+               Stack used: 2 locations
+               Stack size: 31
+
+*
+00000:  GOTO   0290
+.................... #include <18F4620.h> 
+.................... ///////////// Standard Header file for the PIC18F4620 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4620 
+00004:  DATA 50,72
+00006:  DATA 61,63
+00008:  DATA 74,69
+0000A:  DATA 63,61
+0000C:  DATA 20,4E
+0000E:  DATA 6F,2E
+00010:  DATA 20,34
+00012:  DATA 2F,72
+00014:  DATA 00,00
+00016:  DATA 43,61
+00018:  DATA 6C,63
+0001A:  DATA 75,6C
+0001C:  DATA 61,64
+0001E:  DATA 6F,72
+00020:  DATA 61,20
+00022:  DATA 41,72
+00024:  DATA 69,74
+00026:  DATA 6D,65
+00028:  DATA 74,69
+0002A:  DATA 63,61
+0002C:  DATA 20,2F
+0002E:  DATA 72,2F
+00030:  DATA 72,00
+00032:  DATA 49,6E
+00034:  DATA 67,72
+00036:  DATA 65,73
+00038:  DATA 61,20
+0003A:  DATA 65,6C
+0003C:  DATA 20,70
+0003E:  DATA 72,69
+00040:  DATA 6D,65
+00042:  DATA 72,20
+00044:  DATA 6F,70
+00046:  DATA 65,72
+00048:  DATA 61,6E
+0004A:  DATA 64,6F
+0004C:  DATA 20,2F
+0004E:  DATA 72,00
+00050:  DATA 49,6E
+00052:  DATA 67,72
+00054:  DATA 65,73
+00056:  DATA 61,20
+00058:  DATA 65,6C
+0005A:  DATA 20,73
+0005C:  DATA 65,67
+0005E:  DATA 75,6E
+00060:  DATA 64,6F
+00062:  DATA 20,6F
+00064:  DATA 70,65
+00066:  DATA 72,61
+00068:  DATA 6E,64
+0006A:  DATA 6F,20
+0006C:  DATA 2F,72
+0006E:  DATA 00,00
+00070:  DATA 53,65
+00072:  DATA 6C,65
+00074:  DATA 63,63
+00076:  DATA 69,6F
+00078:  DATA 6E,65
+0007A:  DATA 20,75
+0007C:  DATA 6E,61
+0007E:  DATA 20,6F
+00080:  DATA 70,65
+00082:  DATA 72,61
+00084:  DATA 63,69
+00086:  DATA 6F,6E
+00088:  DATA 3A,20
+0008A:  DATA 2F,72
+0008C:  DATA 20,31
+0008E:  DATA 29,53
+00090:  DATA 75,6D
+00092:  DATA 61,20
+00094:  DATA 20,32
+00096:  DATA 29,52
+00098:  DATA 65,73
+0009A:  DATA 74,61
+0009C:  DATA 20,20
+0009E:  DATA 33,29
+000A0:  DATA 4D,75
+000A2:  DATA 6C,74
+000A4:  DATA 69,70
+000A6:  DATA 6C,69
+000A8:  DATA 63,61
+000AA:  DATA 63,69
+000AC:  DATA 6F,6E
+000AE:  DATA 20,20
+000B0:  DATA 34,29
+000B2:  DATA 44,69
+000B4:  DATA 76,69
+000B6:  DATA 73,69
+000B8:  DATA 6F,6E
+000BA:  DATA 20,2F
+000BC:  DATA 72,00
+000BE:  DATA 43,6F
+000C0:  DATA 6D,70
+000C2:  DATA 72,6F
+000C4:  DATA 62,61
+000C6:  DATA 6E,64
+000C8:  DATA 6F,20
+000CA:  DATA 71,75
+000CC:  DATA 65,20
+000CE:  DATA 6C,6F
+000D0:  DATA 73,20
+000D2:  DATA 64,61
+000D4:  DATA 74,6F
+000D6:  DATA 73,20
+000D8:  DATA 66,75
+000DA:  DATA 65,72
+000DC:  DATA 6F,6E
+000DE:  DATA 20,69
+000E0:  DATA 6E,67
+000E2:  DATA 72,65
+000E4:  DATA 73,61
+000E6:  DATA 64,6F
+000E8:  DATA 73,20
+000EA:  DATA 25,64
+000EC:  DATA 2C,20
+000EE:  DATA 25,64
+000F0:  DATA 2C,20
+000F2:  DATA 25,64
+000F4:  DATA 20,00
+*
+00138:  TBLRD*+
+0013A:  MOVF   FF5,F
+0013C:  BZ    0156
+0013E:  MOVFF  FF6,0D
+00142:  MOVFF  FF7,0E
+00146:  MOVFF  FF5,13
+0014A:  RCALL  00F6
+0014C:  MOVFF  0D,FF6
+00150:  MOVFF  0E,FF7
+00154:  BRA    0138
+00156:  RETURN 0
+*
+0019E:  TBLRD*+
+001A0:  MOVFF  FF6,0E
+001A4:  MOVFF  FF7,0F
+001A8:  MOVFF  FF5,13
+001AC:  RCALL  00F6
+001AE:  MOVFF  0E,FF6
+001B2:  MOVFF  0F,FF7
+001B6:  DECFSZ 0D,F
+001B8:  BRA    019E
+001BA:  GOTO   030C (RETURN)
+001BE:  MOVF   14,W
+001C0:  CLRF   01
+001C2:  SUBWF  13,W
+001C4:  BC    01CC
+001C6:  MOVFF  13,00
+001CA:  BRA    01E4
+001CC:  CLRF   00
+001CE:  MOVLW  08
+001D0:  MOVWF  15
+001D2:  RLCF   13,F
+001D4:  RLCF   00,F
+001D6:  MOVF   14,W
+001D8:  SUBWF  00,W
+001DA:  BTFSC  FD8.0
+001DC:  MOVWF  00
+001DE:  RLCF   01,F
+001E0:  DECFSZ 15,F
+001E2:  BRA    01D2
+001E4:  RETURN 0
+001E6:  MOVLW  20
+001E8:  BTFSS  0E.4
+001EA:  MOVLW  30
+001EC:  MOVWF  0F
+001EE:  MOVFF  0D,00
+001F2:  BTFSS  0D.7
+001F4:  BRA    0206
+001F6:  COMF   00,F
+001F8:  INCF   00,F
+001FA:  MOVFF  00,0D
+001FE:  MOVLW  2D
+00200:  MOVWF  0F
+00202:  BSF    0E.7
+00204:  BSF    0E.0
+00206:  MOVF   01,W
+00208:  MOVFF  0D,13
+0020C:  MOVLW  64
+0020E:  MOVWF  14
+00210:  RCALL  01BE
+00212:  MOVFF  00,0D
+00216:  MOVLW  30
+00218:  ADDWF  01,W
+0021A:  MOVWF  10
+0021C:  MOVFF  0D,13
+00220:  MOVLW  0A
+00222:  MOVWF  14
+00224:  RCALL  01BE
+00226:  MOVLW  30
+00228:  ADDWF  00,W
+0022A:  MOVWF  12
+0022C:  MOVLW  30
+0022E:  ADDWF  01,W
+00230:  MOVWF  11
+00232:  MOVFF  0F,00
+00236:  MOVLW  30
+00238:  SUBWF  10,W
+0023A:  BZ    0244
+0023C:  BSF    0E.1
+0023E:  BTFSC  0E.7
+00240:  BSF    0E.2
+00242:  BRA    0268
+00244:  MOVFF  0F,10
+00248:  MOVLW  20
+0024A:  MOVWF  0F
+0024C:  MOVLW  30
+0024E:  SUBWF  11,W
+00250:  BZ    025A
+00252:  BSF    0E.0
+00254:  BTFSC  0E.7
+00256:  BSF    0E.1
+00258:  BRA    0268
+0025A:  BTFSS  FD8.2
+0025C:  BSF    0E.0
+0025E:  BNZ   0268
+00260:  MOVFF  10,11
+00264:  MOVLW  20
+00266:  MOVWF  10
+00268:  BTFSC  0E.2
+0026A:  BRA    0276
+0026C:  BTFSC  0E.1
+0026E:  BRA    027C
+00270:  BTFSC  0E.0
+00272:  BRA    0282
+00274:  BRA    0288
+00276:  MOVFF  0F,13
+0027A:  RCALL  00F6
+0027C:  MOVFF  10,13
+00280:  RCALL  00F6
+00282:  MOVFF  11,13
+00286:  RCALL  00F6
+00288:  MOVFF  12,13
+0028C:  RCALL  00F6
+0028E:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... #fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT  
+.................... #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG 
+.................... #use delay(clock=16000000) 
+.................... #use RS232(UART1,BAUD=9600,BITS=8,PARITY=N,XMIT=PIN_B0,RCV=PIN_B1,STOP=1) 
+*
+000F6:  BCF    F93.0
+000F8:  BCF    F8A.0
+000FA:  MOVLW  08
+000FC:  MOVWF  01
+000FE:  BRA    0100
+00100:  NOP   
+00102:  BSF    01.7
+00104:  BRA    0122
+00106:  BCF    01.7
+00108:  RRCF   13,F
+0010A:  BTFSC  FD8.0
+0010C:  BSF    F8A.0
+0010E:  BTFSS  FD8.0
+00110:  BCF    F8A.0
+00112:  BSF    01.6
+00114:  BRA    0122
+00116:  BCF    01.6
+00118:  DECFSZ 01,F
+0011A:  BRA    0108
+0011C:  BRA    011E
+0011E:  NOP   
+00120:  BSF    F8A.0
+00122:  MOVLW  84
+00124:  MOVWF  FE9
+00126:  DECFSZ FE9,F
+00128:  BRA    0126
+0012A:  BRA    012C
+0012C:  NOP   
+0012E:  BTFSC  01.7
+00130:  BRA    0106
+00132:  BTFSC  01.6
+00134:  BRA    0116
+00136:  RETURN 0
+*
+00158:  BSF    F93.1
+0015A:  BTFSC  F81.1
+0015C:  BRA    015A
+0015E:  MOVLW  08
+00160:  MOVWF  00
+00162:  CLRF   0D
+00164:  BSF    00.7
+00166:  BRA    0184
+00168:  BCF    00.7
+0016A:  BRA    0184
+0016C:  BCF    FD8.0
+0016E:  BTFSC  F81.1
+00170:  BSF    FD8.0
+00172:  RRCF   0D,F
+00174:  BSF    00.6
+00176:  BRA    0184
+00178:  BCF    00.6
+0017A:  DECFSZ 00,F
+0017C:  BRA    016C
+0017E:  MOVFF  0D,01
+00182:  BRA    019C
+00184:  MOVLW  84
+00186:  BTFSC  00.7
+00188:  MOVLW  24
+0018A:  MOVWF  01
+0018C:  DECFSZ 01,F
+0018E:  BRA    018C
+00190:  BRA    0192
+00192:  BTFSC  00.7
+00194:  BRA    0168
+00196:  BTFSC  00.6
+00198:  BRA    0178
+0019A:  BRA    016C
+0019C:  RETURN 0
+.................... #use standard_io(b) 
+....................  
+.................... void main(void) 
+*
+00290:  CLRF   FF8
+00292:  BCF    FD0.7
+00294:  MOVLW  60
+00296:  MOVWF  FD3
+00298:  MOVLW  40
+0029A:  MOVWF  F9B
+0029C:  MOVF   FD3,W
+0029E:  BCF    F93.0
+002A0:  BSF    F8A.0
+002A2:  MOVF   FC1,W
+002A4:  ANDLW  C0
+002A6:  IORLW  0F
+002A8:  MOVWF  FC1
+002AA:  MOVLW  07
+002AC:  MOVWF  FB4
+.................... { 
+....................    //Configuraciones 
+....................    setup_oscillator(OSC_16MHZ); 
+002AE:  MOVLW  60
+002B0:  MOVWF  FD3
+002B2:  MOVLW  40
+002B4:  MOVWF  F9B
+002B6:  MOVF   FD3,W
+....................    //Variables 
+....................    int8 primerOperando, segundoOperando, operacion; 
+....................    float resultado; 
+....................    char opcion; 
+....................    printf("Practica No. 4/r"); 
+002B8:  MOVLW  04
+002BA:  MOVWF  FF6
+002BC:  MOVLW  00
+002BE:  MOVWF  FF7
+002C0:  RCALL  0138
+....................    printf("Calculadora Aritmetica /r/r"); 
+002C2:  MOVLW  16
+002C4:  MOVWF  FF6
+002C6:  MOVLW  00
+002C8:  MOVWF  FF7
+002CA:  RCALL  0138
+....................    printf("Ingresa el primer operando /r"); 
+002CC:  MOVLW  32
+002CE:  MOVWF  FF6
+002D0:  MOVLW  00
+002D2:  MOVWF  FF7
+002D4:  RCALL  0138
+....................    primerOperando=getch(); 
+002D6:  RCALL  0158
+002D8:  MOVFF  01,05
+....................    printf("Ingresa el segundo operando /r"); 
+002DC:  MOVLW  50
+002DE:  MOVWF  FF6
+002E0:  MOVLW  00
+002E2:  MOVWF  FF7
+002E4:  RCALL  0138
+....................    segundoOperando=getch(); 
+002E6:  RCALL  0158
+002E8:  MOVFF  01,06
+....................    printf("Seleccione una operacion: /r 1)Suma  2)Resta  3)Multiplicacion  4)Division /r"); 
+002EC:  MOVLW  70
+002EE:  MOVWF  FF6
+002F0:  MOVLW  00
+002F2:  MOVWF  FF7
+002F4:  RCALL  0138
+....................    operacion=getch(); 
+002F6:  RCALL  0158
+002F8:  MOVFF  01,07
+....................    while(true) 
+....................    { 
+....................       getch(); 
+002FC:  RCALL  0158
+....................       printf("Comprobando que los datos fueron ingresados %d, %d, %d ",primerOperando,segundoOperando,operacion); 
+002FE:  MOVLW  BE
+00300:  MOVWF  FF6
+00302:  MOVLW  00
+00304:  MOVWF  FF7
+00306:  MOVLW  2C
+00308:  MOVWF  0D
+0030A:  BRA    019E
+0030C:  MOVFF  05,0D
+00310:  MOVLW  18
+00312:  MOVWF  0E
+00314:  RCALL  01E6
+00316:  MOVLW  2C
+00318:  MOVWF  13
+0031A:  RCALL  00F6
+0031C:  MOVLW  20
+0031E:  MOVWF  13
+00320:  RCALL  00F6
+00322:  MOVFF  06,0D
+00326:  MOVLW  18
+00328:  MOVWF  0E
+0032A:  RCALL  01E6
+0032C:  MOVLW  2C
+0032E:  MOVWF  13
+00330:  RCALL  00F6
+00332:  MOVLW  20
+00334:  MOVWF  13
+00336:  RCALL  00F6
+00338:  MOVFF  07,0D
+0033C:  MOVLW  18
+0033E:  MOVWF  0E
+00340:  RCALL  01E6
+00342:  MOVLW  20
+00344:  MOVWF  13
+00346:  RCALL  00F6
+00348:  BRA    02FC
+....................    } 
+....................     
+.................... } 
+....................   
+0034A:  SLEEP 
+....................   
+
+Configuration Fuses:
+   Word  1: 0800   INTRC_IO NOFCMEN NOIESO
+   Word  2: 1E18   PUT NOBROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 0500   CCP2C1 NOPBADEN LPT1OSC NOMCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
