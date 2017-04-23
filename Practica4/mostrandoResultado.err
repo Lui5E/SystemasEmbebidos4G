@@ -1,0 +1,4 @@
+>>> Warning 202 "mostrandoResultado.c" Line 15(9,15): Variable never used:   opcion
+      Memory usage:   ROM=3%      RAM=0% - 1%
+      0 Errors,  1 Warnings.
+Build Successful.

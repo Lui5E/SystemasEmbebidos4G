@@ -1,0 +1,19 @@
+[PROJECT]
+Target=mostrandoResultado.hex
+Processor_Text=PIC18F4620
+CCSVersion=5.012
+Compiler=PCH
+[Target Data]
+FileList=mostrandoResultado.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[mostrandoResultado.c]
+Type=4
+[mru-list]
+1=mostrandoResultado.c
+[Opened Files]
+1=mostrandoResultado.c
+2=
+[Units]
+Count=1
+1=mostrandoResultado (main)

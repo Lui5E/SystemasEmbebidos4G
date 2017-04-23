@@ -1,0 +1,4 @@
+>>> Warning 202 "DeclarandoprobandoSalida.c" Line 14(10,19): Variable never used:   resultado
+      Memory usage:   ROM=1%      RAM=0% - 1%
+      0 Errors,  1 Warnings.
+Build Successful.

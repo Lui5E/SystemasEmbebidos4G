@@ -1,0 +1,77 @@
+ÀÄresultadoConCambiodeValores
+   ÀÄMAIN  0/880  Ram=4
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄatoi  0/410  Ram=9
+      ³  ÀÄ@MUL88  0/76  Ram=2
+      ÃÄ@PRINTF_U_911  0/102  Ram=2
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄatoi  0/410  Ram=9
+      ³  ÀÄ*
+      ÃÄ@PRINTF_U_911  0/102  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ADDFF  0/618  Ram=16
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ADDFF  0/618  Ram=16
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@MULFF  0/242  Ram=11
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@DIVFF  0/348  Ram=14
+      ÃÄ@PSTRINGCN_911  0/34  Ram=3
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PRINTF_L32D_911FPFPF  0/386  Ram=13
+      ³  ÃÄ@MULFF  0/242  Ram=11
+      ³  ÃÄ@FTOSD  0/64  Ram=5
+      ³  ÃÄ@DIV3232  0/142  Ram=13
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÀÄ@DIV3232  0/142  Ram=13
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄatoi  0/410  Ram=9
+      ³  ÀÄ*
+      ÃÄ@PRINTF_U_911  0/102  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄatoi  0/410  Ram=9
+      ³  ÀÄ*
+      ÃÄ@PRINTF_U_911  0/102  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_911  0/32  Ram=2
+      ³  ÀÄ*
+      ÀÄ@GETCH_1_  0/70  Ram=1

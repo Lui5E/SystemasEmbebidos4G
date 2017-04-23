@@ -13,6 +13,7 @@ void main(void)
    int8 primerOperando, segundoOperando, operacion;
    float resultado;
    char opcion;
+   ////
    printf("Practica No. 4\r");
    printf("Calculadora Aritmetica \r\r");
    printf("Ingresa el primer operando \r");
@@ -23,11 +24,14 @@ void main(void)
    operacion=(getch())-48;
    while(true)
    {
-      getch();
-      printf("Comprobando que los datos fueron ingresados %d, %d, %d ",primerOperando,segundoOperando,operacion);
-      opcion=getch();
-      printf("Presionaste %c",opcion);
-      
+      //Saca resultado con los dos operadores ingresados y deacuerdo a la operación seleccionada
+      if(operacion==1)   resultado=primerOperando+segundoOperando;     //suma
+      else if(operacion==2)   resultado=primerOperando-segundoOperando;     //resta
+      else if(operacion==3)   resultado=primerOperando*segundoOperando;     //multiplicacion
+      else if(operacion==4)   resultado=primerOperando/segundoOperando;     //divicion
+      //Muestra resultado
+      printf("El resultado de la operacion es: %f",resultado);
+      getch(); //Espera toque de tecla
    }
 }
  

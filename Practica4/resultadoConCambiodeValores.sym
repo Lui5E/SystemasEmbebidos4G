@@ -1,0 +1,167 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 strtok.save
+006-009 _Randseed
+00A     MAIN.primerOperando
+00B     MAIN.segundoOperando
+00C     MAIN.operacion
+00D-010 MAIN.resultado
+011     MAIN.opcion
+012-014 MAIN.cifra
+015     @PRINTF_U_911.P1
+015     @PSTRINGCN_911.P2
+015-018 @PRINTF_L32D_911FPFPF.P3
+015-016 atoi.s
+015     @GETCH_1_.@SCRATCH1
+015     MAIN.@SCRATCH1
+015     @PSTRINGC_911.@SCRATCH1
+016     @PRINTF_U_911.P1
+016     MAIN.@SCRATCH2
+016     @PSTRINGC_911.@SCRATCH2
+016     @PSTRINGCN_911.@SCRATCH1
+017     atoi.result
+017     @DIV88.P1
+017     MAIN.@SCRATCH3
+017     @PSTRINGCN_911.@SCRATCH2
+018     @DIV88.P1
+018     atoi.sign
+018     MAIN.@SCRATCH4
+019     atoi.base
+019-01C @DIVFF.P1
+019-01A @ITOF.P2
+019     @PRINTF_L32D_911FPFPF.P3
+019-01C @ADDFF.P4
+019     @DIV88.@SCRATCH1
+01A     atoi.index
+01A     @PRINTF_L32D_911FPFPF.@SCRATCH1
+01B     atoi.c
+01B     @PRINTF_L32D_911FPFPF.@SCRATCH2
+01C     @MUL88.P1
+01C     atoi.@SCRATCH1
+01C     @PRINTF_L32D_911FPFPF.@SCRATCH3
+01D     @MUL88.P1
+01D-020 @DIVFF.P2
+01D-020 @ADDFF.P3
+01D     atoi.@SCRATCH2
+01D     @PRINTF_L32D_911FPFPF.@SCRATCH4
+01E     @PRINTF_L32D_911FPFPF.@SCRATCH5
+01F     @PRINTF_L32D_911FPFPF.@SCRATCH6
+020     @PRINTF_L32D_911FPFPF.@SCRATCH7
+021     @ADDFF.@SCRATCH1
+021     @DIVFF.@SCRATCH1
+021     @PRINTF_L32D_911FPFPF.@SCRATCH8
+022-025 @FTOSD.P1
+022     @PUTCHAR_1_.P2
+022-025 @DIV3232.P3
+022-025 @MULFF.P4
+022     @ADDFF.@SCRATCH2
+022     @DIVFF.@SCRATCH2
+023     @ADDFF.@SCRATCH3
+023     @DIVFF.@SCRATCH3
+024     @ADDFF.@SCRATCH4
+024     @DIVFF.@SCRATCH4
+025     @ADDFF.@SCRATCH5
+025     @DIVFF.@SCRATCH5
+026-029 @DIV3232.P1
+026-029 @MULFF.P2
+026     @ADDFF.@SCRATCH6
+026     @DIVFF.@SCRATCH6
+026     @FTOSD.@SCRATCH1
+027     @ADDFF.@SCRATCH7
+028     @ADDFF.@SCRATCH8
+02A     @MULFF.@SCRATCH1
+02A     @DIV3232.@SCRATCH1
+02B     @MULFF.@SCRATCH2
+02B     @DIV3232.@SCRATCH2
+02C     @MULFF.@SCRATCH3
+02C     @DIV3232.@SCRATCH3
+02D     @DIV3232.@SCRATCH4
+02E     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const926.call
+000014  @const928.call
+00002E  @const929.call
+00004C  @const937.call
+00006A  @const939.call
+0000B6  @const940.call
+0000DC  @const951.call
+000132  @const952.call
+000150  @const954.call
+00016E  @const956.call
+0001BA  @PUTCHAR_1_
+0001FC  @PSTRINGC_911
+00021C  @GETCH_1_
+000262  @MUL88
+0002AE  atoi
+000448  @DIV88
+000470  @PRINTF_U_911
+0004D6  @ITOF
+00050C  @ADDFF
+000776  @MULFF
+000868  @DIVFF
+0009C4  @PSTRINGCN_911
+0009E6  @FTOSD
+000A26  @DIV3232
+000AB4  @PRINTF_L32D_911FPFPF
+000C36  MAIN
+000C36  @cinit1
+000C54  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\
+
+Project Files:
+    resultadoConCambiodeValores.c                           [23-abr.-17 18:33  CRC=565FC6AE]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 17:34  CRC=044A57BA]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h [08-jun.-11 15:39  CRC=0B6669CF]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [16-jul.-10 10:27  CRC=897CEC6C]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h [14-jul.-11 11:13  CRC=23EDEC8F]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h [03-ene.-08 14:55  CRC=2D1F019F]
+
+Source signature=6DB96470
+
+Units:
+    resultadoConCambiodeValores (main)
+
+Compiler Settings:
+    Processor:      PIC18F4620
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   resultadoConCambiodeValores.xsym
+    Errors:      resultadoConCambiodeValores.err
+    Ext Symbols: resultadoConCambiodeValores.esym
+    INHX32:      resultadoConCambiodeValores.hex
+    Symbols:     resultadoConCambiodeValores.sym
+    List:        resultadoConCambiodeValores.lst
+    Debug/COFF:  resultadoConCambiodeValores.cof
+    Project:     resultadoConCambiodeValores.ccspjt
+    Call Tree:   resultadoConCambiodeValores.tre
+    Statistics:  resultadoConCambiodeValores.STA

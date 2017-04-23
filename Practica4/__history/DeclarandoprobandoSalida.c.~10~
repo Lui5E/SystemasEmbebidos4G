@@ -16,18 +16,16 @@ void main(void)
    printf("Practica No. 4\r");
    printf("Calculadora Aritmetica \r\r");
    printf("Ingresa el primer operando \r");
-   primerOperando=(getch())-48;;
+   primerOperando=getc();
    printf("Ingresa el segundo operando \r");
-   segundoOperando=(getch())-48;
+   segundoOperando=getc();
    printf("Seleccione una operacion: \r 1)Suma  2)Resta  3)Multiplicacion  4)Division \r");
-   operacion=(getch())-48;
+   operacion=getc();
+   printf("Operacion %d",operacion);
    while(true)
    {
       getch();
       printf("Comprobando que los datos fueron ingresados %d, %d, %d ",primerOperando,segundoOperando,operacion);
-      opcion=getch();
-      printf("Presionaste %c",opcion);
-      
    }
 }
  

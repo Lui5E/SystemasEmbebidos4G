@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.012, 41559               20-abr.-17 12:21
+CCS PCH C Compiler, Version 5.012, 41559               20-abr.-17 12:47
 
                Filename:   C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\DeclarandoprobandoSalida.lst
 
-               ROM used:   836 bytes (1%)
-                           Largest free fragment is 64700
-               RAM used:   4 (0%) at main() level
+               ROM used:   882 bytes (1%)
+                           Largest free fragment is 64654
+               RAM used:   5 (0%) at main() level
                            21 (1%) worst case
                Stack used: 2 locations
                Stack size: 31
 
 *
-00000:  GOTO   0288
+00000:  GOTO   0296
 .................... #include <18F4620.h> 
 .................... ///////////// Standard Header file for the PIC18F4620 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
@@ -140,121 +140,129 @@ CCS PCH C Compiler, Version 5.012, 41559               20-abr.-17 12:21
 000E8:  DATA 2C,20
 000EA:  DATA 25,64
 000EC:  DATA 20,00
+000EE:  DATA 50,72
+000F0:  DATA 65,73
+000F2:  DATA 69,6F
+000F4:  DATA 6E,61
+000F6:  DATA 73,74
+000F8:  DATA 65,20
+000FA:  DATA 25,63
+000FC:  DATA 00,00
 *
-00130:  TBLRD*+
-00132:  MOVF   FF5,F
-00134:  BZ    014E
-00136:  MOVFF  FF6,0D
-0013A:  MOVFF  FF7,0E
-0013E:  MOVFF  FF5,13
-00142:  RCALL  00EE
-00144:  MOVFF  0D,FF6
-00148:  MOVFF  0E,FF7
-0014C:  BRA    0130
-0014E:  RETURN 0
+00140:  TBLRD*+
+00142:  MOVF   FF5,F
+00144:  BZ    015E
+00146:  MOVFF  FF6,0D
+0014A:  MOVFF  FF7,0E
+0014E:  MOVFF  FF5,13
+00152:  RCALL  00FE
+00154:  MOVFF  0D,FF6
+00158:  MOVFF  0E,FF7
+0015C:  BRA    0140
+0015E:  RETURN 0
 *
-00196:  TBLRD*+
-00198:  MOVFF  FF6,0E
-0019C:  MOVFF  FF7,0F
-001A0:  MOVFF  FF5,13
-001A4:  RCALL  00EE
-001A6:  MOVFF  0E,FF6
-001AA:  MOVFF  0F,FF7
-001AE:  DECFSZ 0D,F
-001B0:  BRA    0196
-001B2:  GOTO   0304 (RETURN)
-001B6:  MOVF   14,W
-001B8:  CLRF   01
-001BA:  SUBWF  13,W
-001BC:  BC    01C4
-001BE:  MOVFF  13,00
-001C2:  BRA    01DC
-001C4:  CLRF   00
-001C6:  MOVLW  08
-001C8:  MOVWF  15
-001CA:  RLCF   13,F
-001CC:  RLCF   00,F
-001CE:  MOVF   14,W
-001D0:  SUBWF  00,W
-001D2:  BTFSC  FD8.0
-001D4:  MOVWF  00
-001D6:  RLCF   01,F
-001D8:  DECFSZ 15,F
-001DA:  BRA    01CA
-001DC:  RETURN 0
-001DE:  MOVLW  20
-001E0:  BTFSS  0E.4
-001E2:  MOVLW  30
-001E4:  MOVWF  0F
-001E6:  MOVFF  0D,00
-001EA:  BTFSS  0D.7
-001EC:  BRA    01FE
-001EE:  COMF   00,F
-001F0:  INCF   00,F
-001F2:  MOVFF  00,0D
-001F6:  MOVLW  2D
-001F8:  MOVWF  0F
-001FA:  BSF    0E.7
-001FC:  BSF    0E.0
-001FE:  MOVF   01,W
-00200:  MOVFF  0D,13
-00204:  MOVLW  64
-00206:  MOVWF  14
-00208:  RCALL  01B6
-0020A:  MOVFF  00,0D
-0020E:  MOVLW  30
-00210:  ADDWF  01,W
-00212:  MOVWF  10
-00214:  MOVFF  0D,13
-00218:  MOVLW  0A
-0021A:  MOVWF  14
-0021C:  RCALL  01B6
-0021E:  MOVLW  30
-00220:  ADDWF  00,W
-00222:  MOVWF  12
-00224:  MOVLW  30
-00226:  ADDWF  01,W
-00228:  MOVWF  11
-0022A:  MOVFF  0F,00
-0022E:  MOVLW  30
-00230:  SUBWF  10,W
-00232:  BZ    023C
-00234:  BSF    0E.1
-00236:  BTFSC  0E.7
-00238:  BSF    0E.2
-0023A:  BRA    0260
-0023C:  MOVFF  0F,10
-00240:  MOVLW  20
-00242:  MOVWF  0F
-00244:  MOVLW  30
-00246:  SUBWF  11,W
-00248:  BZ    0252
-0024A:  BSF    0E.0
-0024C:  BTFSC  0E.7
-0024E:  BSF    0E.1
-00250:  BRA    0260
-00252:  BTFSS  FD8.2
-00254:  BSF    0E.0
-00256:  BNZ   0260
-00258:  MOVFF  10,11
-0025C:  MOVLW  20
-0025E:  MOVWF  10
-00260:  BTFSC  0E.2
-00262:  BRA    026E
-00264:  BTFSC  0E.1
-00266:  BRA    0274
-00268:  BTFSC  0E.0
-0026A:  BRA    027A
-0026C:  BRA    0280
-0026E:  MOVFF  0F,13
-00272:  RCALL  00EE
-00274:  MOVFF  10,13
-00278:  RCALL  00EE
-0027A:  MOVFF  11,13
-0027E:  RCALL  00EE
-00280:  MOVFF  12,13
-00284:  RCALL  00EE
-00286:  RETURN 0
+001A6:  TBLRD*+
+001A8:  MOVFF  FF6,0E
+001AC:  MOVFF  FF7,0F
+001B0:  MOVFF  FF5,13
+001B4:  RCALL  00FE
+001B6:  MOVFF  0E,FF6
+001BA:  MOVFF  0F,FF7
+001BE:  DECFSZ 0D,F
+001C0:  BRA    01A6
+001C2:  RETURN 0
+001C4:  MOVF   14,W
+001C6:  CLRF   01
+001C8:  SUBWF  13,W
+001CA:  BC    01D2
+001CC:  MOVFF  13,00
+001D0:  BRA    01EA
+001D2:  CLRF   00
+001D4:  MOVLW  08
+001D6:  MOVWF  15
+001D8:  RLCF   13,F
+001DA:  RLCF   00,F
+001DC:  MOVF   14,W
+001DE:  SUBWF  00,W
+001E0:  BTFSC  FD8.0
+001E2:  MOVWF  00
+001E4:  RLCF   01,F
+001E6:  DECFSZ 15,F
+001E8:  BRA    01D8
+001EA:  RETURN 0
+001EC:  MOVLW  20
+001EE:  BTFSS  0E.4
+001F0:  MOVLW  30
+001F2:  MOVWF  0F
+001F4:  MOVFF  0D,00
+001F8:  BTFSS  0D.7
+001FA:  BRA    020C
+001FC:  COMF   00,F
+001FE:  INCF   00,F
+00200:  MOVFF  00,0D
+00204:  MOVLW  2D
+00206:  MOVWF  0F
+00208:  BSF    0E.7
+0020A:  BSF    0E.0
+0020C:  MOVF   01,W
+0020E:  MOVFF  0D,13
+00212:  MOVLW  64
+00214:  MOVWF  14
+00216:  RCALL  01C4
+00218:  MOVFF  00,0D
+0021C:  MOVLW  30
+0021E:  ADDWF  01,W
+00220:  MOVWF  10
+00222:  MOVFF  0D,13
+00226:  MOVLW  0A
+00228:  MOVWF  14
+0022A:  RCALL  01C4
+0022C:  MOVLW  30
+0022E:  ADDWF  00,W
+00230:  MOVWF  12
+00232:  MOVLW  30
+00234:  ADDWF  01,W
+00236:  MOVWF  11
+00238:  MOVFF  0F,00
+0023C:  MOVLW  30
+0023E:  SUBWF  10,W
+00240:  BZ    024A
+00242:  BSF    0E.1
+00244:  BTFSC  0E.7
+00246:  BSF    0E.2
+00248:  BRA    026E
+0024A:  MOVFF  0F,10
+0024E:  MOVLW  20
+00250:  MOVWF  0F
+00252:  MOVLW  30
+00254:  SUBWF  11,W
+00256:  BZ    0260
+00258:  BSF    0E.0
+0025A:  BTFSC  0E.7
+0025C:  BSF    0E.1
+0025E:  BRA    026E
+00260:  BTFSS  FD8.2
+00262:  BSF    0E.0
+00264:  BNZ   026E
+00266:  MOVFF  10,11
+0026A:  MOVLW  20
+0026C:  MOVWF  10
+0026E:  BTFSC  0E.2
+00270:  BRA    027C
+00272:  BTFSC  0E.1
+00274:  BRA    0282
+00276:  BTFSC  0E.0
+00278:  BRA    0288
+0027A:  BRA    028E
+0027C:  MOVFF  0F,13
+00280:  RCALL  00FE
+00282:  MOVFF  10,13
+00286:  RCALL  00FE
+00288:  MOVFF  11,13
+0028C:  RCALL  00FE
+0028E:  MOVFF  12,13
+00292:  RCALL  00FE
+00294:  RETURN 0
 ....................  
 .................... #list 
 ....................  
@@ -263,188 +271,208 @@ CCS PCH C Compiler, Version 5.012, 41559               20-abr.-17 12:21
 .................... #use delay(clock=16000000) 
 .................... #use RS232(UART1,BAUD=9600,BITS=8,PARITY=N,XMIT=PIN_B0,RCV=PIN_B1,STOP=1)   
 *
-000EE:  BCF    F93.0
-000F0:  BCF    F8A.0
-000F2:  MOVLW  08
-000F4:  MOVWF  01
-000F6:  BRA    00F8
-000F8:  NOP   
-000FA:  BSF    01.7
-000FC:  BRA    011A
-000FE:  BCF    01.7
-00100:  RRCF   13,F
-00102:  BTFSC  FD8.0
-00104:  BSF    F8A.0
-00106:  BTFSS  FD8.0
-00108:  BCF    F8A.0
-0010A:  BSF    01.6
-0010C:  BRA    011A
-0010E:  BCF    01.6
-00110:  DECFSZ 01,F
-00112:  BRA    0100
-00114:  BRA    0116
-00116:  NOP   
-00118:  BSF    F8A.0
-0011A:  MOVLW  84
-0011C:  MOVWF  FE9
-0011E:  DECFSZ FE9,F
-00120:  BRA    011E
-00122:  BRA    0124
-00124:  NOP   
-00126:  BTFSC  01.7
-00128:  BRA    00FE
-0012A:  BTFSC  01.6
-0012C:  BRA    010E
-0012E:  RETURN 0
+000FE:  BCF    F93.0
+00100:  BCF    F8A.0
+00102:  MOVLW  08
+00104:  MOVWF  01
+00106:  BRA    0108
+00108:  NOP   
+0010A:  BSF    01.7
+0010C:  BRA    012A
+0010E:  BCF    01.7
+00110:  RRCF   13,F
+00112:  BTFSC  FD8.0
+00114:  BSF    F8A.0
+00116:  BTFSS  FD8.0
+00118:  BCF    F8A.0
+0011A:  BSF    01.6
+0011C:  BRA    012A
+0011E:  BCF    01.6
+00120:  DECFSZ 01,F
+00122:  BRA    0110
+00124:  BRA    0126
+00126:  NOP   
+00128:  BSF    F8A.0
+0012A:  MOVLW  84
+0012C:  MOVWF  FE9
+0012E:  DECFSZ FE9,F
+00130:  BRA    012E
+00132:  BRA    0134
+00134:  NOP   
+00136:  BTFSC  01.7
+00138:  BRA    010E
+0013A:  BTFSC  01.6
+0013C:  BRA    011E
+0013E:  RETURN 0
 *
-00150:  BSF    F93.1
-00152:  BTFSC  F81.1
-00154:  BRA    0152
-00156:  MOVLW  08
-00158:  MOVWF  00
-0015A:  CLRF   0D
-0015C:  BSF    00.7
-0015E:  BRA    017C
-00160:  BCF    00.7
-00162:  BRA    017C
-00164:  BCF    FD8.0
-00166:  BTFSC  F81.1
-00168:  BSF    FD8.0
-0016A:  RRCF   0D,F
-0016C:  BSF    00.6
-0016E:  BRA    017C
-00170:  BCF    00.6
-00172:  DECFSZ 00,F
-00174:  BRA    0164
-00176:  MOVFF  0D,01
-0017A:  BRA    0194
-0017C:  MOVLW  84
-0017E:  BTFSC  00.7
-00180:  MOVLW  24
-00182:  MOVWF  01
-00184:  DECFSZ 01,F
-00186:  BRA    0184
-00188:  BRA    018A
-0018A:  BTFSC  00.7
-0018C:  BRA    0160
-0018E:  BTFSC  00.6
-00190:  BRA    0170
-00192:  BRA    0164
-00194:  RETURN 0
+00160:  BSF    F93.1
+00162:  BTFSC  F81.1
+00164:  BRA    0162
+00166:  MOVLW  08
+00168:  MOVWF  00
+0016A:  CLRF   0D
+0016C:  BSF    00.7
+0016E:  BRA    018C
+00170:  BCF    00.7
+00172:  BRA    018C
+00174:  BCF    FD8.0
+00176:  BTFSC  F81.1
+00178:  BSF    FD8.0
+0017A:  RRCF   0D,F
+0017C:  BSF    00.6
+0017E:  BRA    018C
+00180:  BCF    00.6
+00182:  DECFSZ 00,F
+00184:  BRA    0174
+00186:  MOVFF  0D,01
+0018A:  BRA    01A4
+0018C:  MOVLW  84
+0018E:  BTFSC  00.7
+00190:  MOVLW  24
+00192:  MOVWF  01
+00194:  DECFSZ 01,F
+00196:  BRA    0194
+00198:  BRA    019A
+0019A:  BTFSC  00.7
+0019C:  BRA    0170
+0019E:  BTFSC  00.6
+001A0:  BRA    0180
+001A2:  BRA    0174
+001A4:  RETURN 0
 .................... #use standard_io(b) 
 ....................  
 .................... void main(void) 
 *
-00288:  CLRF   FF8
-0028A:  BCF    FD0.7
-0028C:  MOVLW  60
-0028E:  MOVWF  FD3
-00290:  MOVLW  40
-00292:  MOVWF  F9B
-00294:  MOVF   FD3,W
-00296:  BCF    F93.0
-00298:  BSF    F8A.0
-0029A:  MOVF   FC1,W
-0029C:  ANDLW  C0
-0029E:  IORLW  0F
-002A0:  MOVWF  FC1
-002A2:  MOVLW  07
-002A4:  MOVWF  FB4
+00296:  CLRF   FF8
+00298:  BCF    FD0.7
+0029A:  MOVLW  60
+0029C:  MOVWF  FD3
+0029E:  MOVLW  40
+002A0:  MOVWF  F9B
+002A2:  MOVF   FD3,W
+002A4:  BCF    F93.0
+002A6:  BSF    F8A.0
+002A8:  MOVF   FC1,W
+002AA:  ANDLW  C0
+002AC:  IORLW  0F
+002AE:  MOVWF  FC1
+002B0:  MOVLW  07
+002B2:  MOVWF  FB4
 .................... { 
 ....................    //Configuraciones 
 ....................    setup_oscillator(OSC_16MHZ); 
-002A6:  MOVLW  60
-002A8:  MOVWF  FD3
-002AA:  MOVLW  40
-002AC:  MOVWF  F9B
-002AE:  MOVF   FD3,W
+002B4:  MOVLW  60
+002B6:  MOVWF  FD3
+002B8:  MOVLW  40
+002BA:  MOVWF  F9B
+002BC:  MOVF   FD3,W
 ....................    //Variables 
 ....................    int8 primerOperando, segundoOperando, operacion; 
 ....................    float resultado; 
 ....................    char opcion; 
 ....................    printf("Practica No. 4\r"); 
-002B0:  MOVLW  04
-002B2:  MOVWF  FF6
-002B4:  MOVLW  00
-002B6:  MOVWF  FF7
-002B8:  RCALL  0130
+002BE:  MOVLW  04
+002C0:  MOVWF  FF6
+002C2:  MOVLW  00
+002C4:  MOVWF  FF7
+002C6:  RCALL  0140
 ....................    printf("Calculadora Aritmetica \r\r"); 
-002BA:  MOVLW  14
-002BC:  MOVWF  FF6
-002BE:  MOVLW  00
-002C0:  MOVWF  FF7
-002C2:  RCALL  0130
+002C8:  MOVLW  14
+002CA:  MOVWF  FF6
+002CC:  MOVLW  00
+002CE:  MOVWF  FF7
+002D0:  RCALL  0140
 ....................    printf("Ingresa el primer operando \r"); 
-002C4:  MOVLW  2E
-002C6:  MOVWF  FF6
-002C8:  MOVLW  00
-002CA:  MOVWF  FF7
-002CC:  RCALL  0130
-....................    primerOperando=getch(); 
-002CE:  RCALL  0150
-002D0:  MOVFF  01,05
+002D2:  MOVLW  2E
+002D4:  MOVWF  FF6
+002D6:  MOVLW  00
+002D8:  MOVWF  FF7
+002DA:  RCALL  0140
+....................    primerOperando=(getch())-48;; 
+002DC:  RCALL  0160
+002DE:  MOVLW  30
+002E0:  SUBWF  01,W
+002E2:  MOVWF  05
 ....................    printf("Ingresa el segundo operando \r"); 
-002D4:  MOVLW  4C
-002D6:  MOVWF  FF6
-002D8:  MOVLW  00
-002DA:  MOVWF  FF7
-002DC:  RCALL  0130
-....................    segundoOperando=getch(); 
-002DE:  RCALL  0150
-002E0:  MOVFF  01,06
-....................    printf("Seleccione una operacion: \r 1)Suma  2)Resta  3)Multiplicacion  4)Division \r"); 
-002E4:  MOVLW  6A
+002E4:  MOVLW  4C
 002E6:  MOVWF  FF6
 002E8:  MOVLW  00
 002EA:  MOVWF  FF7
-002EC:  RCALL  0130
-....................    operacion=getch(); 
-002EE:  RCALL  0150
-002F0:  MOVFF  01,07
-....................    while(true) 
-....................    { 
-....................       getch(); 
-002F4:  RCALL  0150
-....................       printf("Comprobando que los datos fueron ingresados %d, %d, %d ",primerOperando,segundoOperando,operacion); 
-002F6:  MOVLW  B6
+002EC:  RCALL  0140
+....................    segundoOperando=(getch())-48; 
+002EE:  RCALL  0160
+002F0:  MOVLW  30
+002F2:  SUBWF  01,W
+002F4:  MOVWF  06
+....................    printf("Seleccione una operacion: \r 1)Suma  2)Resta  3)Multiplicacion  4)Division \r"); 
+002F6:  MOVLW  6A
 002F8:  MOVWF  FF6
 002FA:  MOVLW  00
 002FC:  MOVWF  FF7
-002FE:  MOVLW  2C
-00300:  MOVWF  0D
-00302:  BRA    0196
-00304:  MOVFF  05,0D
-00308:  MOVLW  18
-0030A:  MOVWF  0E
-0030C:  RCALL  01DE
-0030E:  MOVLW  2C
-00310:  MOVWF  13
-00312:  RCALL  00EE
-00314:  MOVLW  20
-00316:  MOVWF  13
-00318:  RCALL  00EE
-0031A:  MOVFF  06,0D
-0031E:  MOVLW  18
-00320:  MOVWF  0E
-00322:  RCALL  01DE
-00324:  MOVLW  2C
-00326:  MOVWF  13
-00328:  RCALL  00EE
-0032A:  MOVLW  20
-0032C:  MOVWF  13
-0032E:  RCALL  00EE
-00330:  MOVFF  07,0D
-00334:  MOVLW  18
-00336:  MOVWF  0E
-00338:  RCALL  01DE
-0033A:  MOVLW  20
-0033C:  MOVWF  13
-0033E:  RCALL  00EE
-00340:  BRA    02F4
+002FE:  RCALL  0140
+....................    operacion=(getch())-48; 
+00300:  RCALL  0160
+00302:  MOVLW  30
+00304:  SUBWF  01,W
+00306:  MOVWF  07
+....................    while(true) 
+....................    { 
+....................       getch(); 
+00308:  RCALL  0160
+....................       printf("Comprobando que los datos fueron ingresados %d, %d, %d ",primerOperando,segundoOperando,operacion); 
+0030A:  MOVLW  B6
+0030C:  MOVWF  FF6
+0030E:  MOVLW  00
+00310:  MOVWF  FF7
+00312:  MOVLW  2C
+00314:  MOVWF  0D
+00316:  RCALL  01A6
+00318:  MOVFF  05,0D
+0031C:  MOVLW  18
+0031E:  MOVWF  0E
+00320:  RCALL  01EC
+00322:  MOVLW  2C
+00324:  MOVWF  13
+00326:  RCALL  00FE
+00328:  MOVLW  20
+0032A:  MOVWF  13
+0032C:  RCALL  00FE
+0032E:  MOVFF  06,0D
+00332:  MOVLW  18
+00334:  MOVWF  0E
+00336:  RCALL  01EC
+00338:  MOVLW  2C
+0033A:  MOVWF  13
+0033C:  RCALL  00FE
+0033E:  MOVLW  20
+00340:  MOVWF  13
+00342:  RCALL  00FE
+00344:  MOVFF  07,0D
+00348:  MOVLW  18
+0034A:  MOVWF  0E
+0034C:  RCALL  01EC
+0034E:  MOVLW  20
+00350:  MOVWF  13
+00352:  RCALL  00FE
+....................       opcion=getch(); 
+00354:  RCALL  0160
+00356:  MOVFF  01,0C
+....................       printf("Presionaste %c",opcion); 
+0035A:  MOVLW  EE
+0035C:  MOVWF  FF6
+0035E:  MOVLW  00
+00360:  MOVWF  FF7
+00362:  MOVLW  0C
+00364:  MOVWF  0D
+00366:  RCALL  01A6
+00368:  MOVFF  0C,13
+0036C:  RCALL  00FE
+0036E:  BRA    0308
+....................        
 ....................    } 
 .................... } 
 ....................   
-00342:  SLEEP 
+00370:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0800   INTRC_IO NOFCMEN NOIESO

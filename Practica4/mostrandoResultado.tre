@@ -1,0 +1,34 @@
+ÀÄmostrandoResultado
+   ÀÄmain  0/308  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@PSTRINGC_638  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@GETCH_1_  0/70  Ram=1
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@DIV88  0/42  Ram=3
+      ÃÄ@ITOF  0/54  Ram=2
+      ÃÄ@PSTRINGCN_638  0/32  Ram=3
+      ³  ÀÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@PRINTF_L32D_638FPFPF  0/378  Ram=13
+      ³  ÃÄ@MULFF  0/244  Ram=11
+      ³  ÃÄ@FTOSD  0/64  Ram=5
+      ³  ÃÄ@DIV3232  0/142  Ram=13
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ³  ÀÄ@DIV3232  0/142  Ram=13
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÀÄ@GETCH_1_  0/70  Ram=1

@@ -1,0 +1,116 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.primerOperando
+006     main.segundoOperando
+007     main.operacion
+008-00B main.resultado
+00C     main.opcion
+00D     @PSTRINGCN_638.P1
+00D-00E @ITOF.P2
+00D-010 @PRINTF_L32D_638FPFPF.P3
+00D     @DIV88.P4
+00D     @GETCH_1_.@SCRATCH1
+00D     main.@SCRATCH1
+00D     @PSTRINGC_638.@SCRATCH1
+00E     @DIV88.P1
+00E     @PSTRINGC_638.@SCRATCH2
+00E     @PSTRINGCN_638.@SCRATCH1
+00F     @DIV88.@SCRATCH1
+00F     @PSTRINGCN_638.@SCRATCH2
+011     @PRINTF_L32D_638FPFPF.P1
+012     @PRINTF_L32D_638FPFPF.@SCRATCH1
+013     @PRINTF_L32D_638FPFPF.@SCRATCH2
+014     @PRINTF_L32D_638FPFPF.@SCRATCH3
+015     @PRINTF_L32D_638FPFPF.@SCRATCH4
+016     @PRINTF_L32D_638FPFPF.@SCRATCH5
+017     @PRINTF_L32D_638FPFPF.@SCRATCH6
+018     @PRINTF_L32D_638FPFPF.@SCRATCH7
+019     @PRINTF_L32D_638FPFPF.@SCRATCH8
+01A-01D @FTOSD.P1
+01A     @PUTCHAR_1_.P2
+01A-01D @MULFF.P3
+01A-01D @DIV3232.P4
+01E-021 @MULFF.P1
+01E-021 @DIV3232.P2
+01E     @FTOSD.@SCRATCH1
+022     @MULFF.@SCRATCH1
+022     @DIV3232.@SCRATCH1
+023     @MULFF.@SCRATCH2
+023     @DIV3232.@SCRATCH2
+024     @MULFF.@SCRATCH3
+024     @DIV3232.@SCRATCH3
+025     @DIV3232.@SCRATCH4
+026     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const652.call
+000014  @const654.call
+00002E  @const655.call
+00004C  @const656.call
+00006A  @const657.call
+0000B6  @const663.call
+0000DC  @PUTCHAR_1_
+00011E  @PSTRINGC_638
+00013E  @GETCH_1_
+000184  @ITOF
+0001BA  @DIV88
+0001E4  @PSTRINGCN_638
+000204  @MULFF
+0002F8  @FTOSD
+000338  @DIV3232
+0003C6  @PRINTF_L32D_638FPFPF
+000540  main
+000540  @cinit1
+00055E  @cinit2
+
+Project Directory:
+    C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\
+
+Project Files:
+    mostrandoResultado.c                                    [20-abr.-17 13:01  CRC=08CC434F]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 17:34  CRC=044A57BA]
+
+Source signature=1160F2C3
+
+Units:
+    mostrandoResultado (main)
+
+Compiler Settings:
+    Processor:      PIC18F4620
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   mostrandoResultado.xsym
+    Errors:      mostrandoResultado.err
+    Ext Symbols: mostrandoResultado.esym
+    INHX32:      mostrandoResultado.hex
+    Symbols:     mostrandoResultado.sym
+    List:        mostrandoResultado.lst
+    Debug/COFF:  mostrandoResultado.cof
+    Project:     mostrandoResultado.ccspjt
+    Call Tree:   mostrandoResultado.tre
+    Statistics:  mostrandoResultado.STA
