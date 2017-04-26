@@ -1,0 +1,6 @@
+>>> Warning 216 "programaPrincipal.c" Line 79(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PUTCHAR_1_)
+>>> Warning 216 "programaPrincipal.c" Line 79(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC_911)
+>>> Warning 216 "programaPrincipal.c" Line 79(1,2): Interrupts disabled during call to prevent re-entrancy:  (@GETCH_1_)
+      Memory usage:   ROM=7%      RAM=1% - 2%
+      0 Errors,  3 Warnings.
+Build Successful.

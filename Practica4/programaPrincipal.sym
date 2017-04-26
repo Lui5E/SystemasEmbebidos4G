@@ -1,0 +1,188 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017-018 strtok.save
+019-01C _Randseed
+01D     tamanoBufer
+01E-027 Bufer
+028     banderaError
+029-02C MAIN.primerOperando
+02D-030 MAIN.segundoOperando
+031-034 MAIN.operacion
+035-038 MAIN.resultado
+039-03A strtof.s
+039     @PSTRINGCN_911.P1
+039-03C @PRINTF_L32D_911FPFPF.P2
+039-03C @FLT.P3
+03A     @PSTRINGCN_911.@SCRATCH1
+03B-03C strtof.endptr
+03B     @PSTRINGCN_911.@SCRATCH2
+03D     @PRINTF_L32D_911FPFPF.P1
+03D-040 @FLT.P2
+03D-040 strtof.pow10
+03E     @PRINTF_L32D_911FPFPF.@SCRATCH1
+03F     @PRINTF_L32D_911FPFPF.@SCRATCH2
+040     @PRINTF_L32D_911FPFPF.@SCRATCH3
+041-044 strtof.result
+041     @PRINTF_L32D_911FPFPF.@SCRATCH4
+041     @FLT.@SCRATCH1
+042     @PRINTF_L32D_911FPFPF.@SCRATCH5
+042     @FLT.@SCRATCH2
+043     @PRINTF_L32D_911FPFPF.@SCRATCH6
+044     @PRINTF_L32D_911FPFPF.@SCRATCH7
+045.0   strtof.skip
+045.1   strtof.sign
+045.2   strtof.point
+045     @PRINTF_L32D_911FPFPF.@SCRATCH8
+046-049 @FTOSD.P1
+046     strtof.c
+046-049 @DIV3232.P1
+047     strtof.ptr
+048-04B @MULFF.P1
+048     strtof.@SCRATCH1
+049     strtof.@SCRATCH2
+04A-04D @DIV3232.P1
+04A     strtof.@SCRATCH3
+04A     @FTOSD.@SCRATCH1
+04B     strtof.@SCRATCH4
+04C-04D @ITOF.P1
+04C-04F @DIVFF.P2
+04C-04F @MULFF.P3
+04C-04F @ADDFF.P4
+04E     @DIV3232.@SCRATCH1
+04F     @DIV3232.@SCRATCH2
+050-053 @ADDFF.P1
+050-053 @DIVFF.P2
+050     @MULFF.@SCRATCH1
+050     @DIV3232.@SCRATCH3
+051     @MULFF.@SCRATCH2
+051     @DIV3232.@SCRATCH4
+052     @MULFF.@SCRATCH3
+052     @DIV3232.@SCRATCH5
+054     @ADDFF.@SCRATCH1
+054     @DIVFF.@SCRATCH1
+055     @ADDFF.@SCRATCH2
+055     @DIVFF.@SCRATCH2
+056     @ADDFF.@SCRATCH3
+056     @DIVFF.@SCRATCH3
+057     @ADDFF.@SCRATCH4
+057     @DIVFF.@SCRATCH4
+058     @ADDFF.@SCRATCH5
+058     @DIVFF.@SCRATCH5
+059     @ADDFF.@SCRATCH6
+059     @DIVFF.@SCRATCH6
+05A     @ADDFF.@SCRATCH7
+05B     @ADDFF.@SCRATCH8
+05C     rda_isr.posicion
+05D     rda_isr.@SCRATCH1
+05D     @PSTRINGC_911.@SCRATCH1
+05E     rda_isr.@SCRATCH2
+05E     @PSTRINGC_911.@SCRATCH2
+05F     @PUTCHAR_1_.P1
+05F     rda_isr.@SCRATCH3
+060     rda_isr.@SCRATCH4
+061     @GETCH_1_.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  @PUTCHAR_1_
+0000D8  @PSTRINGC_911
+0000F8  @GETCH_1_
+00013E  rda_isr
+000212  @const922.call
+00021E  @const924.call
+00022E  @const933.call
+00023E  @const934.call
+000258  @const935.call
+000276  @const945.call
+000294  @const947.call
+0002E0  @const951.call
+000306  @MULFF
+0003F8  @ITOF
+00042E  @DIVFF
+000588  @ADDFF
+0007F2  strtof
+000A24  @FTOSD
+000A64  @DIV3232
+000AF2  @PRINTF_L32D_911FPFPF
+000CA4  @FLT
+000D1A  @PSTRINGCN_911
+000D48  @cinit1
+000D48  MAIN
+000D6A  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+06C3  inicio
+
+Project Directory:
+    C:\Users\luis\Documents\4Semestre\Embebidos\SystemasEmbebidos4G\Practica4\
+
+Project Files:
+    programaPrincipal.c                                     [25-abr.-17 21:51  CRC=6F909E75]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h [10-sep.-13 17:34  CRC=044A57BA]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h [08-jun.-11 15:39  CRC=0B6669CF]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [16-jul.-10 10:27  CRC=897CEC6C]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h [14-jul.-11 11:13  CRC=23EDEC8F]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h [03-ene.-08 14:55  CRC=2D1F019F]
+
+Source signature=86EA3C37
+
+Units:
+    programaPrincipal (main)
+
+Compiler Settings:
+    Processor:      PIC18F4620
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   programaPrincipal.xsym
+    Errors:      programaPrincipal.err
+    Ext Symbols: programaPrincipal.esym
+    INHX32:      programaPrincipal.hex
+    Symbols:     programaPrincipal.sym
+    List:        programaPrincipal.lst
+    Debug/COFF:  programaPrincipal.cof
+    Project:     programaPrincipal.ccspjt
+    Call Tree:   programaPrincipal.tre
+    Statistics:  programaPrincipal.STA
